@@ -12,7 +12,7 @@
 
 1. number
 
-code bock:
+code block:
 
 ```sh
 cd code here
