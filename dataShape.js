@@ -204,11 +204,6 @@ const colors = {
 	// color objs here...
 };
 
-women: {
-	bags: [{}];
-	clothes: [{}];
-	shoes: [{}];
-}
 const RESULTS = [
 	{
 		stateSalesTax: [
@@ -420,39 +415,54 @@ const RESULTS = [
 
 		reviews: {
 			//what about shoes, bags, accessories?
-			women: [
-				{
-					id: 1,
-					productId: NUM, //SAME AS ID OF PRODUCT
-					type: STRING, //jackets, coats, blazers, skirts
-					subType: STRING, //['basics','denim','biker', 'fauxLeather', 'coats', 'trenchCoats', 'cropped', 'suits']
-					rating: 5,
-					reviewText: 'Great jacket! Fits perfectly and looks stylish.',
-					reviewer: 'John Doe',
-				},
-			],
-			men: [
-				{
-					id: 1,
-					productId: NUM, //SAME AS ID OF PRODUCT
-					type: STRING, //jackets, coats, blazers, skirts
-					subType: STRING, //['basics','denim','biker', 'fauxLeather', 'coats', 'trenchCoats', 'cropped', 'suits']
-					rating: 5,
-					reviewText: 'Great jacket! Fits perfectly and looks stylish.',
-					reviewer: 'John Doe',
-				},
-			],
-			kids: [
-				{
-					id: 1,
-					productId: NUM, //SAME AS ID OF PRODUCT
-					type: STRING, //jackets, coats, blazers, skirts
-					subType: STRING, //['basics','denim','biker', 'fauxLeather', 'coats', 'trenchCoats', 'cropped', 'suits']
-					rating: 5,
-					reviewText: 'Great jacket! Fits perfectly and looks stylish.',
-					reviewer: 'John Doe',
-				},
-			],
+			women: {
+				clothes: [
+					{
+						id: 1,
+						productId: NUM, //SAME AS ID OF PRODUCT
+						type: STRING, //jackets, coats, blazers, skirts <IS THIS NEEDED?>
+						subType: STRING, //['basics','denim','biker', 'fauxLeather', 'coats', 'trenchCoats', 'cropped', 'suits']<IS THIS NEEDED?>
+						rating: 5,
+						reviewText: 'Great jacket! Fits perfectly and looks stylish.',
+						reviewer: 'John Doe',
+					},
+				],
+				bags: [{}],
+				shoes: [{}],
+				accessories: [{}],
+			},
+			men: {
+				clothes: [
+					{
+						id: 1,
+						productId: NUM, //SAME AS ID OF PRODUCT
+						type: STRING, //jackets, coats, blazers, skirts <IS THIS NEEDED?>
+						subType: STRING, //['basics','denim','biker', 'fauxLeather', 'coats', 'trenchCoats', 'cropped', 'suits']<IS THIS NEEDED?>
+						rating: 5,
+						reviewText: 'Great jacket! Fits perfectly and looks stylish.',
+						reviewer: 'John Doe',
+					},
+				],
+				bags: [{}],
+				shoes: [{}],
+				accessories: [{}],
+			},
+			kids: {
+				clothes: [
+					{
+						id: 1,
+						productId: NUM, //SAME AS ID OF PRODUCT
+						type: STRING, //jackets, coats, blazers, skirts <IS THIS NEEDED?>
+						subType: STRING, //['basics','denim','biker', 'fauxLeather', 'coats', 'trenchCoats', 'cropped', 'suits']<IS THIS NEEDED?>
+						rating: 5,
+						reviewText: 'Great jacket! Fits perfectly and looks stylish.',
+						reviewer: 'John Doe',
+					},
+				],
+				bags: [{}],
+				shoes: [{}],
+				accessories: [{}],
+			},
 		},
 		clothing: {
 			products: [
