@@ -1,3 +1,4 @@
+// FIX THE COLORS.  FOCUS ON COMMON COLORS AND REMOVE EDGE CASES TO REDUCE REDUNDANCY
 const allOuterwearColors = [
 	{
 		id: Number,
@@ -38,7 +39,6 @@ const allOuterwearColors = [
 		],
 	},
 ];
-
 const allTopsColors = [
 	{
 		id: Number,
@@ -87,7 +87,6 @@ const allTopsColors = [
 		],
 	},
 ];
-
 const allSweaterShirtsVestsColors = [
 	{
 		id: Number,
@@ -120,12 +119,8 @@ const allSweaterShirtsVestsColors = [
 		],
 	},
 ];
-
-// dresses, sweaters, cardigens, t-shirts, shirts/blouses, skirts
 const allColors = [
 	{
-		id: Number,
-		type: 't-shirts',
 		colors: [
 			{
 				color: 'beige',
@@ -177,32 +172,7 @@ const allColors = [
 			},
 		],
 	},
-];
-
-const allSizes = {
-	women: {
-		bottoms: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'],
-		tops: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL'], //dresses, tops, tshirts, shirts/blouses, sweaters/cardigens/sweatershirts?, vests, outerwear
-		shos: [],
-		accessories: [], //is this needed?
-	},
-	men: {
-		//fix
-		bottoms: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'],
-		tops: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL'],
-		shos: [],
-	},
-	kids: {
-		//fix
-		bottoms: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'],
-		tops: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL'],
-		shos: [],
-	},
-};
-
-const colors = {
-	// color objs here...
-};
+]; // dresses, sweaters, cardigens, t-shirts, shirts/blouses, skirts
 
 const RESULTS = [
 	{
@@ -412,9 +382,7 @@ const RESULTS = [
 				taxRate: 0.05441,
 			},
 		],
-
 		reviews: {
-			//what about shoes, bags, accessories?
 			women: {
 				clothes: [
 					{
@@ -425,6 +393,7 @@ const RESULTS = [
 						rating: 5,
 						reviewText: 'Great jacket! Fits perfectly and looks stylish.',
 						reviewer: 'John Doe',
+						date: NUM,
 					},
 				],
 				bags: [{}],
@@ -441,6 +410,7 @@ const RESULTS = [
 						rating: 5,
 						reviewText: 'Great jacket! Fits perfectly and looks stylish.',
 						reviewer: 'John Doe',
+						date: NUM,
 					},
 				],
 				bags: [{}],
@@ -457,6 +427,7 @@ const RESULTS = [
 						rating: 5,
 						reviewText: 'Great jacket! Fits perfectly and looks stylish.',
 						reviewer: 'John Doe',
+						date: NUM,
 					},
 				],
 				bags: [{}],
@@ -464,80 +435,127 @@ const RESULTS = [
 				accessories: [{}],
 			},
 		},
+		// FIX THE SIZES. FOCUS ON COMMON SIZES AND REMOVE EDGE CASES TO REDUCE REDUNDANCY
+		allSizes: {
+			women: {
+				bottoms: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'],
+				tops: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL'], //dresses, tops, tshirts, shirts/blouses, sweaters/cardigens/sweatershirts?, vests, outerwear
+				shoes: [],
+				accessories: [], //is this needed?
+			},
+			men: {
+				//fix
+				bottoms: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'],
+				tops: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL'],
+				shoes: [],
+			},
+			kids: {
+				//fix
+				bottoms: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'],
+				tops: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL'],
+				shoes: [],
+			},
+		},
 		clothing: {
-			products: [
-				//OUTERWEAR: JACKETS, BLAZERS, COATS.
-				{
-					id: Number,
-					category: STRING, //'women'
-					type: STRING, //jackets, coats, blazers, skirts
-					subType: STRING, //['basics','denim','biker', 'fauxLeather', 'coats', 'trenchCoats', 'cropped', 'suits']
-					name: STRING,
-					description: STRING,
-					price: Number,
-					stylesDetail: {
-						type: [], //["vintage", "boho", "preppy", "modern", 'classic', 'traditional', 'streetwear', 'grunge', 'casual', 'party', 'daily', 'romantic']
-						fit: STRING, //loose fit, oversized fit, regular fit, Skinny Fit, Slim Fit, Straight Fit, Wide Leg, Bootcut fit, Flare fit, Relaxed Fit
-						color: 'blue',
-						hexValue: '#000AAA',
-						hasPattern: false,
-						pattern: STRING, //Solid, Striped, Plaid, Floral, polka dot
-					},
-					size: [STRING],
-					rating: Number,
-					availability: {
-						inStock: true,
-						quantity: Number,
-						restockDate: STRING,
-						sku: NUM, //ABC-12345-BLK-S
-					},
-					images: {
-						primary: STRING,
-						secondary: [STRINGS],
-					},
-					productDetails: {
-						detail: STRING, //Pleated, Distressed,front zipper,Pockets
-						sleeveLength: STRING, //(e.g., "short sleeve", "long sleeve"), sleeveless, 3/4 sleeve,
-						neckLine: STRING, //(e.g., "crew neck", "v-neck")Button-down Collar, Spread Collar, Mandarin Collar, V-neck, Scoop Neck, round-next, high-neck
-						rise: STRING, //"high-rise", "mid-rise", "low-rise")
-						length: STRING, //length: (for pants/skirts – "ankle", "full length"), Full length, Cropped, Ankle length, Capri
-						fabric: STRING, //'100% Polyester',Denim, Silk, Cotton, Linen, Polyester, Leather (or faux leather), Stretch blends, fleece, wool, cashmere, alpaca,
-						careInstructions:
-							'Machine wash cold, gentle cycle. Do not bleach. Tumble dry low. Cool iron if needed.',
-						sizeGuide: 'Refer to the size chart below for accurate sizing.',
-						styleFeatures:
-							'Adjustable drawstring hood, snap button cuffs, flap pockets, hidden zip closure.',
-						closure: 'Front hidden zip and snap button closure.',
-						designDetails:
-							'Elastic drawstring hood, side elastic hem, snap button cuffs.',
-						functionality:
-							'Front flap pockets for storage, adjustable hem for a customized fit.',
-						occasion:
-							'Suitable for casual wear, outdoor activities, and everyday use.',
-						brandInfo: {
-							name: 'Example Brand',
-							origin: 'United States',
-							about:
-								'Example Brand is committed to creating high-quality, stylish apparel for modern individuals. Our designs combine functionality, comfort, and fashion-forward aesthetics to meet the needs of our customers.',
-						},
-						additionalFeatures: 'Water-resistant fabric, UV protection.',
-					},
-					availableOptions: {
-						availableSizes: [STRING],
-						images: {
-							primary: STRING,
-							secondary: [STRINGS],
-						},
-						colorInfo: {
-							name: STRING,
-							hexValue: STRING,
-						},
-					},
+			item: {
+				id: Number,
+				category: STRING, //'women'
+				type: STRING, //jackets, coats, blazers, skirts, shoes
+				subType: STRING, //['basics','denim','biker', 'fauxLeather', 'coats', 'trenchCoats', 'cropped', 'suits']
+				name: STRING,
+				description: STRING,
+				price: Number,
+				size: [STRING],
+				rating: Number,
+				reviewIds: [], // [4, 5] IDs of reviews for this skirt
+				date: NUM,
+				primaryImage: STRING,
+				secondaryImage: [STRINGS],
+				stylesDetail: {
+					style: [], //["vintage", "boho", "preppy", "modern", 'classic', 'traditional', 'streetwear', 'grunge', 'casual', 'party', 'daily', 'romantic']
+					detail: STRING, //Pleated, Distressed,front zipper,Pockets, bedazzeled
+					fit: STRING, //loose fit, oversized fit, regular fit, Skinny Fit, Slim Fit, Straight Fit, Wide Leg, Bootcut fit, Flare fit, Relaxed Fit
+					color: 'blue',
+					hexColorValue: '#000AAA',
+					hasPattern: false,
+					pattern: STRING, //Solid, Striped, Plaid, Floral, polka dot
+					sleeveLength: STRING, //(e.g., "short sleeve", "long sleeve"), sleeveless, 3/4 sleeve,
+					neckLine: STRING, //(e.g., "crew neck", "v-neck")Button-down Collar, Spread Collar, Mandarin Collar, V-neck, Scoop Neck, round-next, high-neck
+					rise: STRING, //"high-rise", "mid-rise", "low-rise")
+					length: STRING, //length: (for pants/skirts – "ankle", "full length"), Full length, Cropped, Ankle length, Capri
+					fabric: STRING, //'100% Polyester',Denim, Silk, Cotton, Linen, Polyester, Leather (or faux leather), Stretch blends, fleece, wool, cashmere, alpaca,
 				},
-			],
+				availability: {
+					inStock: true,
+					quantity: Number,
+					restockDate: STRING,
+					sku: NUM, //ABC-12345-BLK-S
+				},
+				productDetails: {
+					careInstructions:
+						'Machine wash cold, gentle cycle. Do not bleach. Tumble dry low. Cool iron if needed.',
+					sizeGuide: 'Refer to the size chart below for accurate sizing.',
+					styleFeatures:
+						'Adjustable drawstring hood, snap button cuffs, flap pockets, hidden zip closure.',
+					closure: 'Front hidden zip and snap button closure.',
+					designDetails:
+						'Elastic drawstring hood, side elastic hem, snap button cuffs.',
+					functionality:
+						'Front flap pockets for storage, adjustable hem for a customized fit.',
+					occasion:
+						'Suitable for casual wear, outdoor activities, and everyday use.',
+					brandInfo: {
+						name: 'Example Brand',
+						origin: 'United States',
+						about:
+							'Example Brand is committed to creating high-quality, stylish apparel for modern individuals. Our designs combine functionality, comfort, and fashion-forward aesthetics to meet the needs of our customers.',
+					},
+					additionalFeatures: 'Water-resistant fabric, UV protection.',
+				},
+				availableOptions: {
+					availableSizes: [STRING],
+					primaryImage: STRING,
+					secondaryImage: [STRINGS],
+					color: 'blue',
+					hexColorValue: '#000AAA',
+				},
+			},
 		},
 		shoes: {
-			products: [],
+			item: {
+				id: Number,
+				category: STRING, //women
+				type: STRING, //shoe, sneaker, pump, boots,
+				name: STRING,
+				description: STRING,
+				price: Number,
+				size: [STRING],
+				rating: Number,
+				reviewIds: [],
+				primaryImage: STRING,
+				secondaryImage: [STRINGS],
+				waterResistance: Boolean,
+				material: ['Leather', 'Canvas', 'Synthetic'], //(Can be more detailed if needed),
+				type: STRING, //LOAFERS,PLATFORMS,SNEAKERS,HEELED SHOES,FISHERMAN SANDALS, WEDGES, SANDALS, CLOGS, BOOTS, ANKLE BOOTS, SPORT SHOES, BALLET FLATS,MULES
+				stylesDetail: {
+					style: [], //['casual', "daily", 'upscale', 'professionl', "classic",]
+					color: 'blue',
+					hexColorValue: '#000AAA',
+					width: ['Regular', 'Wide', 'Narrow'],
+					closureType: ['Laces', 'Buckle', 'Slip-on'],
+					heelHeight: Number, //(inches or cm)
+					patern: STRING, // plain,
+					heelsize: STRING, //shrot heels
+					heelType: STRING, //
+					persona: STRING, //cool and comfort
+				},
+			},
+		},
+		accessories: {
+			item: {},
+		},
+		bags: {
+			item: {},
 		},
 	},
 ];
