@@ -174,6 +174,58 @@ const allColors = [
 	},
 ]; // dresses, sweaters, cardigens, t-shirts, shirts/blouses, skirts
 
+const allShoeColors = [
+	{
+		id: Number,
+		type: 'shoes',
+		colors: [
+			{
+				color: 'beige',
+				hexColor: '#F5F5DC',
+			},
+			{
+				color: 'black',
+				hexColor: '#000',
+			},
+			{
+				color: 'blue',
+				hexColor: '#0000FF',
+			},
+			{
+				color: 'brown',
+				hexColor: '#A52A2A',
+			},
+			{
+				color: 'green',
+				hexColor: '#008000',
+			},
+			{
+				color: 'gray',
+				hexColor: '#808080',
+			},
+			{
+				color: 'red',
+				hexColor: '#FF0000',
+			},
+			{
+				color: 'white',
+				hexColor: '#FFF',
+			},
+			{
+				color: 'pink',
+				hexColor: '#FFC0CB',
+			},
+			{
+				color: 'printed',
+				hexColor: '#FFF',
+			},
+			{
+				color: 'metallic',
+				hexColor: '#e5cf75',
+			},
+		],
+	},
+];
 const RESULTS = [
 	{
 		stateSalesTax: [
@@ -525,7 +577,7 @@ const RESULTS = [
 			item: {
 				id: Number,
 				category: STRING, //women
-				type: STRING, //shoe, sneaker, pump, boots,
+				type: STRING, //LOAFERS,PLATFORMS,PUMPS,SNEAKERS,HEELED SHOES,FISHERMAN SANDALS, WEDGES, SANDALS, CLOGS, BOOTS, ANKLE BOOTS, SPORT SHOES, BALLET FLATS,MULES
 				name: STRING,
 				description: STRING,
 				price: Number,
@@ -536,9 +588,8 @@ const RESULTS = [
 				secondaryImage: [STRINGS],
 				waterResistance: Boolean,
 				material: ['Leather', 'Canvas', 'Synthetic'], //(Can be more detailed if needed),
-				type: STRING, //LOAFERS,PLATFORMS,SNEAKERS,HEELED SHOES,FISHERMAN SANDALS, WEDGES, SANDALS, CLOGS, BOOTS, ANKLE BOOTS, SPORT SHOES, BALLET FLATS,MULES
 				stylesDetail: {
-					style: [], //['casual', "daily", 'upscale', 'professionl', "classic",]
+					style: [], //['casual', "daily", 'upscale', 'professional', "classic",]
 					color: 'blue',
 					hexColorValue: '#000AAA',
 					width: ['Regular', 'Wide', 'Narrow'],
@@ -548,6 +599,13 @@ const RESULTS = [
 					heelsize: STRING, //shrot heels
 					heelType: STRING, //
 					persona: STRING, //cool and comfort
+				},
+				availableOptions: {
+					availableSizes: [STRING],
+					primaryImage: STRING,
+					secondaryImage: [STRINGS],
+					color: 'blue',
+					hexColorValue: '#000AAA',
 				},
 			},
 		},
