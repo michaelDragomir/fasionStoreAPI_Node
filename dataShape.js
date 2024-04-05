@@ -488,6 +488,7 @@ const RESULTS = [
 			},
 		},
 		// FIX THE SIZES. FOCUS ON COMMON SIZES AND REMOVE EDGE CASES TO REDUCE REDUNDANCY
+		// how will I plan on storing this? cant store such big objects? need to optimize and link section through a common product id....interface..when and how this data will be used..think of things in relationships. how to query based on product id and suchs..
 		allSizes: {
 			women: {
 				bottoms: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'],
@@ -511,7 +512,7 @@ const RESULTS = [
 		clothing: {
 			item: {
 				id: Number,
-				category: STRING, //'women'
+				category: STRING, //'women, men, kids'
 				type: STRING, //jackets, coats, blazers, skirts, shoes
 				subType: STRING, //['basics','denim','biker', 'fauxLeather', 'coats', 'trenchCoats', 'cropped', 'suits']
 				name: STRING,
@@ -599,6 +600,33 @@ const RESULTS = [
 					heelsize: STRING, //shrot heels
 					heelType: STRING, //
 					persona: STRING, //cool and comfort
+				},
+				availability: {
+					inStock: true,
+					quantity: Number,
+					restockDate: STRING,
+					sku: NUM, //ABC-12345-BLK-S
+				},
+				productDetails: {
+					careInstructions:
+						'Machine wash cold, gentle cycle. Do not bleach. Tumble dry low. Cool iron if needed.',
+					sizeGuide: 'Refer to the size chart below for accurate sizing.',
+					styleFeatures:
+						'Adjustable drawstring hood, snap button cuffs, flap pockets, hidden zip closure.',
+					closure: 'Front hidden zip and snap button closure.',
+					designDetails:
+						'Elastic drawstring hood, side elastic hem, snap button cuffs.',
+					functionality:
+						'Front flap pockets for storage, adjustable hem for a customized fit.',
+					occasion:
+						'Suitable for casual wear, outdoor activities, and everyday use.',
+					brandInfo: {
+						name: 'Example Brand',
+						origin: 'United States',
+						about:
+							'Example Brand is committed to creating high-quality, stylish apparel for modern individuals. Our designs combine functionality, comfort, and fashion-forward aesthetics to meet the needs of our customers.',
+					},
+					additionalFeatures: 'Water-resistant fabric, UV protection.',
 				},
 				availableOptions: {
 					availableSizes: [STRING],
