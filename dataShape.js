@@ -174,58 +174,6 @@ const allColors = [
 	},
 ]; // dresses, sweaters, cardigens, t-shirts, shirts/blouses, skirts
 
-const allShoeColors = [
-	{
-		id: Number,
-		type: 'shoes',
-		colors: [
-			{
-				color: 'beige',
-				hexColor: '#F5F5DC',
-			},
-			{
-				color: 'black',
-				hexColor: '#000',
-			},
-			{
-				color: 'blue',
-				hexColor: '#0000FF',
-			},
-			{
-				color: 'brown',
-				hexColor: '#A52A2A',
-			},
-			{
-				color: 'green',
-				hexColor: '#008000',
-			},
-			{
-				color: 'gray',
-				hexColor: '#808080',
-			},
-			{
-				color: 'red',
-				hexColor: '#FF0000',
-			},
-			{
-				color: 'white',
-				hexColor: '#FFF',
-			},
-			{
-				color: 'pink',
-				hexColor: '#FFC0CB',
-			},
-			{
-				color: 'printed',
-				hexColor: '#FFF',
-			},
-			{
-				color: 'metallic',
-				hexColor: '#e5cf75',
-			},
-		],
-	},
-];
 const RESULTS = [
 	{
 		stateSalesTax: [
@@ -434,6 +382,7 @@ const RESULTS = [
 				taxRate: 0.05441,
 			},
 		],
+		//=====================================================
 		reviews: {
 			women: {
 				clothes: [
@@ -487,13 +436,14 @@ const RESULTS = [
 				accessories: [{}],
 			},
 		},
+		//=====================================================
 		// FIX THE SIZES. FOCUS ON COMMON SIZES AND REMOVE EDGE CASES TO REDUCE REDUNDANCY
 		// how will I plan on storing this? cant store such big objects? need to optimize and link section through a common product id....interface..when and how this data will be used..think of things in relationships. how to query based on product id and suchs..
 		allSizes: {
 			women: {
 				bottoms: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'],
-				tops: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL'], //dresses, tops, tshirts, shirts/blouses, sweaters/cardigens/sweatershirts?, vests, outerwear
-				shoes: [],
+				tops: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL'],
+				shoes: [5, 6, 7, 8, 9, 10, 11, 12],
 				accessories: [], //is this needed?
 			},
 			men: {
@@ -501,14 +451,73 @@ const RESULTS = [
 				bottoms: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'],
 				tops: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL'],
 				shoes: [],
+				accessories: [], //is this needed?
 			},
 			kids: {
 				//fix
 				bottoms: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'],
 				tops: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL'],
 				shoes: [],
+				accessories: [], //is this needed?
 			},
 		},
+		//=====================================================
+		allColors: {
+			women: {
+				bottoms: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'],
+				tops: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL'],
+				shoes: [
+					{
+						color: 'beige',
+						hexColor: '#F5F5DC',
+					},
+					{
+						color: 'black',
+						hexColor: '#000',
+					},
+					{
+						color: 'blue',
+						hexColor: '#0000FF',
+					},
+					{
+						color: 'brown',
+						hexColor: '#A52A2A',
+					},
+					{
+						color: 'green',
+						hexColor: '#008000',
+					},
+					{
+						color: 'gray',
+						hexColor: '#808080',
+					},
+					{
+						color: 'red',
+						hexColor: '#FF0000',
+					},
+					{
+						color: 'white',
+						hexColor: '#FFF',
+					},
+					{
+						color: 'pink',
+						hexColor: '#FFC0CB',
+					},
+					{
+						color: 'printed',
+						hexColor: '#FFF',
+					},
+					{
+						color: 'metallic',
+						hexColor: '#e5cf75',
+					},
+				],
+				accessories: [], //is this needed?
+			},
+			men: {},
+			kids: {},
+		},
+		//=====================================================
 		clothing: {
 			item: {
 				id: Number,
@@ -574,7 +583,7 @@ const RESULTS = [
 				},
 			},
 		},
-		shoes: {
+		footwear: {
 			item: {
 				id: Number,
 				category: STRING, //women
@@ -597,8 +606,8 @@ const RESULTS = [
 					closureType: ['Laces', 'Buckle', 'Slip-on'],
 					heelHeight: Number, //(inches or cm)
 					patern: STRING, // plain,
-					heelsize: STRING, //shrot heels
-					heelType: STRING, //
+					heelsize: STRING, //short heels
+					heelType: STRING, // hem, block, wedge, platform, high, medium, flat
 					persona: STRING, //cool and comfort
 				},
 				availability: {
@@ -646,6 +655,7 @@ const RESULTS = [
 	},
 ];
 
+// =========================ADDITIONAL EXAMPLES============================
 // const shirtsAndBlouses = [
 // 	{
 // 		type: 'shirt',
