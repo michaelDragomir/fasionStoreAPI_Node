@@ -1,179 +1,3 @@
-// FIX THE COLORS.  FOCUS ON COMMON COLORS AND REMOVE EDGE CASES TO REDUCE REDUNDANCY
-const allOuterwearColors = [
-	{
-		id: Number,
-		type: 'outerwear',
-		colors: [
-			{
-				color: 'beige',
-				hexColor: '#F5F5DC',
-			},
-			{
-				color: 'black',
-				hexColor: '#000',
-			},
-			{
-				color: 'blue',
-				hexColor: '#0000FF',
-			},
-			{
-				color: 'brown',
-				hexColor: '#A52A2A',
-			},
-			{
-				color: 'green',
-				hexColor: '#008000',
-			},
-			{
-				color: 'gray',
-				hexColor: '#808080',
-			},
-			{
-				color: 'red',
-				hexColor: '#FF0000',
-			},
-			{
-				color: 'white',
-				hexColor: '#FFF',
-			},
-		],
-	},
-];
-const allTopsColors = [
-	{
-		id: Number,
-		type: 'tops',
-		colors: [
-			{
-				color: 'beige',
-				hexColor: '#F5F5DC',
-			},
-			{
-				color: 'black',
-				hexColor: '#000',
-			},
-			{
-				color: 'blue',
-				hexColor: '#0000FF',
-			},
-			{
-				color: 'brown',
-				hexColor: '#A52A2A',
-			},
-			{
-				color: 'green',
-				hexColor: '#008000',
-			},
-			{
-				color: 'gray',
-				hexColor: '#808080',
-			},
-			{
-				color: 'red',
-				hexColor: '#FF0000',
-			},
-			{
-				color: 'white',
-				hexColor: '#FFF',
-			},
-			{
-				color: 'pink',
-				hexColor: '#FFC0CB',
-			},
-			{
-				color: 'printed',
-				hexColor: '#FFF',
-			},
-		],
-	},
-];
-const allSweaterShirtsVestsColors = [
-	{
-		id: Number,
-		type: 't-shirts',
-		colors: [
-			{
-				color: 'beige',
-				hexColor: '#F5F5DC',
-			},
-			{
-				color: 'black',
-				hexColor: '#000',
-			},
-			{
-				color: 'blue',
-				hexColor: '#0000FF',
-			},
-			{
-				color: 'green',
-				hexColor: '#008000',
-			},
-			{
-				color: 'gray',
-				hexColor: '#808080',
-			},
-			{
-				color: 'white',
-				hexColor: '#FFF',
-			},
-		],
-	},
-];
-const allColors = [
-	{
-		colors: [
-			{
-				color: 'beige',
-				hexColor: '#F5F5DC',
-			},
-			{
-				color: 'black',
-				hexColor: '#000',
-			},
-			{
-				color: 'blue',
-				hexColor: '#0000FF',
-			},
-			{
-				color: 'brown',
-				hexColor: '#A52A2A',
-			},
-			{
-				color: 'green',
-				hexColor: '#008000',
-			},
-			{
-				color: 'gray',
-				hexColor: '#808080',
-			},
-			{
-				color: 'metallic',
-				hexColor: '#e5cf75',
-			},
-			{
-				color: 'pink',
-				hexColor: '#FFC0CB',
-			},
-			{
-				color: 'printed',
-				hexColor: '#FFF',
-			},
-			{
-				color: 'red',
-				hexColor: '#FF0000',
-			},
-			{
-				color: 'white',
-				hexColor: '#FFF',
-			},
-			{
-				color: 'yellow',
-				hexColor: '#FFFF00',
-			},
-		],
-	},
-]; // dresses, sweaters, cardigens, t-shirts, shirts/blouses, skirts
-
 const RESULTS = [
 	{
 		stateSalesTax: [
@@ -464,8 +288,184 @@ const RESULTS = [
 		//=====================================================
 		allColors: {
 			women: {
-				bottoms: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'],
-				tops: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL'],
+				all: [
+					{
+						color: 'beige',
+						hexColor: '#F5F5DC',
+					},
+					{
+						color: 'black',
+						hexColor: '#000',
+					},
+					{
+						color: 'blue',
+						hexColor: '#0000FF',
+					},
+					{
+						color: 'brown',
+						hexColor: '#A52A2A',
+					},
+					{
+						color: 'green',
+						hexColor: '#008000',
+					},
+					{
+						color: 'gray',
+						hexColor: '#808080',
+					},
+					{
+						color: 'metallic',
+						hexColor: '#e5cf75',
+					},
+					{
+						color: 'pink',
+						hexColor: '#FFC0CB',
+					},
+					{
+						color: 'printed',
+						hexColor: '#FFF',
+					},
+					{
+						color: 'red',
+						hexColor: '#FF0000',
+					},
+					{
+						color: 'white',
+						hexColor: '#FFF',
+					},
+					{
+						color: 'yellow',
+						hexColor: '#FFFF00',
+					},
+				],
+				SweaterShirtsVests: [
+					{
+						color: 'beige',
+						hexColor: '#F5F5DC',
+					},
+					{
+						color: 'black',
+						hexColor: '#000',
+					},
+					{
+						color: 'blue',
+						hexColor: '#0000FF',
+					},
+					{
+						color: 'green',
+						hexColor: '#008000',
+					},
+					{
+						color: 'gray',
+						hexColor: '#808080',
+					},
+					{
+						color: 'white',
+						hexColor: '#FFF',
+					},
+				],
+				bottoms: [
+					{
+						color: 'beige',
+						hexColor: '#F5F5DC',
+					},
+					{
+						color: 'black',
+						hexColor: '#000',
+					},
+					{
+						color: 'blue',
+						hexColor: '#0000FF',
+					},
+					{
+						color: 'green',
+						hexColor: '#008000',
+					},
+					{
+						color: 'gray',
+						hexColor: '#808080',
+					},
+					{
+						color: 'white',
+						hexColor: '#FFF',
+					},
+				],
+				outerWear: [
+					{
+						color: 'beige',
+						hexColor: '#F5F5DC',
+					},
+					{
+						color: 'black',
+						hexColor: '#000',
+					},
+					{
+						color: 'blue',
+						hexColor: '#0000FF',
+					},
+					{
+						color: 'brown',
+						hexColor: '#A52A2A',
+					},
+					{
+						color: 'green',
+						hexColor: '#008000',
+					},
+					{
+						color: 'gray',
+						hexColor: '#808080',
+					},
+					{
+						color: 'red',
+						hexColor: '#FF0000',
+					},
+					{
+						color: 'white',
+						hexColor: '#FFF',
+					},
+				],
+				tops: [
+					{
+						color: 'beige',
+						hexColor: '#F5F5DC',
+					},
+					{
+						color: 'black',
+						hexColor: '#000',
+					},
+					{
+						color: 'blue',
+						hexColor: '#0000FF',
+					},
+					{
+						color: 'brown',
+						hexColor: '#A52A2A',
+					},
+					{
+						color: 'green',
+						hexColor: '#008000',
+					},
+					{
+						color: 'gray',
+						hexColor: '#808080',
+					},
+					{
+						color: 'red',
+						hexColor: '#FF0000',
+					},
+					{
+						color: 'white',
+						hexColor: '#FFF',
+					},
+					{
+						color: 'pink',
+						hexColor: '#FFC0CB',
+					},
+					{
+						color: 'printed',
+						hexColor: '#FFF',
+					},
+				],
 				shoes: [
 					{
 						color: 'beige',
@@ -552,11 +552,11 @@ const RESULTS = [
 					quantity: Number,
 					restockDate: STRING,
 					sku: NUM, //ABC-12345-BLK-S
+					comingSoon: Boolean,
 				},
 				productDetails: {
 					careInstructions:
 						'Machine wash cold, gentle cycle. Do not bleach. Tumble dry low. Cool iron if needed.',
-					sizeGuide: 'Refer to the size chart below for accurate sizing.',
 					styleFeatures:
 						'Adjustable drawstring hood, snap button cuffs, flap pockets, hidden zip closure.',
 					closure: 'Front hidden zip and snap button closure.',
@@ -587,6 +587,7 @@ const RESULTS = [
 			item: {
 				id: Number,
 				category: STRING, //women
+				season: String,
 				type: STRING, //LOAFERS,PLATFORMS,PUMPS,SNEAKERS,HEELED SHOES,FISHERMAN SANDALS, WEDGES, SANDALS, CLOGS, BOOTS, ANKLE BOOTS, SPORT SHOES, BALLET FLATS,MULES
 				name: STRING,
 				description: STRING,
@@ -597,7 +598,12 @@ const RESULTS = [
 				primaryImage: STRING,
 				secondaryImage: [STRINGS],
 				waterResistance: Boolean,
-				material: ['Leather', 'Canvas', 'Synthetic'], //(Can be more detailed if needed),
+				materialsDetail: {
+					upperMaterial: String,
+					liningMaterial: String,
+					soleMaterial: String,
+				},
+				// If properties like type, style, material have specific options, create separate tables for those and reference them using IDs. This enhances data integrity and makes your database more scalable. DO I DO THIS FOR ALL OF THEM?
 				stylesDetail: {
 					style: [], //['casual', "daily", 'upscale', 'professional', "classic",]
 					color: 'blue',
@@ -605,36 +611,25 @@ const RESULTS = [
 					width: ['Regular', 'Wide', 'Narrow'],
 					closureType: ['Laces', 'Buckle', 'Slip-on'],
 					heelHeight: Number, //(inches or cm)
+					soleHeight: Number,
 					patern: STRING, // plain,
-					heelsize: STRING, //short heels
 					heelType: STRING, // hem, block, wedge, platform, high, medium, flat
-					persona: STRING, //cool and comfort
 				},
 				availability: {
 					inStock: true,
 					quantity: Number,
-					restockDate: STRING,
-					sku: NUM, //ABC-12345-BLK-S
 				},
-				productDetails: {
+				brandInfo: {
+					brand: 'Example Brand',
+					countryOfOrigin: 'United States',
+					about:
+						'Example Brand is committed to creating high-quality, stylish apparel for modern individuals. Our designs combine functionality, comfort, and fashion-forward aesthetics to meet the needs of our customers.',
+				},
+				features: {
 					careInstructions:
 						'Machine wash cold, gentle cycle. Do not bleach. Tumble dry low. Cool iron if needed.',
-					sizeGuide: 'Refer to the size chart below for accurate sizing.',
-					styleFeatures:
-						'Adjustable drawstring hood, snap button cuffs, flap pockets, hidden zip closure.',
-					closure: 'Front hidden zip and snap button closure.',
-					designDetails:
-						'Elastic drawstring hood, side elastic hem, snap button cuffs.',
-					functionality:
-						'Front flap pockets for storage, adjustable hem for a customized fit.',
 					occasion:
 						'Suitable for casual wear, outdoor activities, and everyday use.',
-					brandInfo: {
-						name: 'Example Brand',
-						origin: 'United States',
-						about:
-							'Example Brand is committed to creating high-quality, stylish apparel for modern individuals. Our designs combine functionality, comfort, and fashion-forward aesthetics to meet the needs of our customers.',
-					},
 					additionalFeatures: 'Water-resistant fabric, UV protection.',
 				},
 				availableOptions: {
