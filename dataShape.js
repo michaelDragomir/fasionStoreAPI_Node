@@ -1,4 +1,5 @@
 const RESULTS = [
+	//Search Optimization: Think about the fields users might search for (e.g., brand, features, occasion) and ensure the object is designed to support those searches.
 	{
 		stateSalesTax: [
 			{
@@ -211,14 +212,14 @@ const RESULTS = [
 			women: {
 				clothes: [
 					{
-						id: 1,
-						productId: NUM, //SAME AS ID OF PRODUCT
-						type: STRING, //jackets, coats, blazers, skirts <IS THIS NEEDED?>
-						subType: STRING, //['basics','denim','biker', 'fauxLeather', 'coats', 'trenchCoats', 'cropped', 'suits']<IS THIS NEEDED?>
-						rating: 5,
-						reviewText: 'Great jacket! Fits perfectly and looks stylish.',
-						reviewer: 'John Doe',
-						date: NUM,
+						id: Number, //1
+						productId: Number, //SAME AS ID OF PRODUCT
+						type: String, //jackets, coats, blazers, skirts <IS THIS NEEDED?>
+						subType: String, //['basics','denim','biker', 'fauxLeather', 'coats', 'trenchCoats', 'cropped', 'suits']<IS THIS NEEDED?>
+						rating: Number, //5
+						reviewText: String, //'Great jacket! Fits perfectly and looks stylish.',
+						reviewer: String, //'John Doe',
+						date: Number,
 					},
 				],
 				bags: [{}],
@@ -228,14 +229,14 @@ const RESULTS = [
 			men: {
 				clothes: [
 					{
-						id: 1,
-						productId: NUM, //SAME AS ID OF PRODUCT
-						type: STRING, //jackets, coats, blazers, skirts <IS THIS NEEDED?>
-						subType: STRING, //['basics','denim','biker', 'fauxLeather', 'coats', 'trenchCoats', 'cropped', 'suits']<IS THIS NEEDED?>
-						rating: 5,
-						reviewText: 'Great jacket! Fits perfectly and looks stylish.',
-						reviewer: 'John Doe',
-						date: NUM,
+						id: Number, //1,
+						productId: Number, //SAME AS ID OF PRODUCT
+						type: String, //jackets, coats, blazers, skirts <IS THIS NEEDED?>
+						subType: String, //['basics','denim','biker', 'fauxLeather', 'coats', 'trenchCoats', 'cropped', 'suits']<IS THIS NEEDED?>
+						rating: Number, //5
+						reviewText: String, //'Great jacket! Fits perfectly and looks stylish.',
+						reviewer: String, //'John Doe',
+						date: Number,
 					},
 				],
 				bags: [{}],
@@ -245,14 +246,14 @@ const RESULTS = [
 			kids: {
 				clothes: [
 					{
-						id: 1,
-						productId: NUM, //SAME AS ID OF PRODUCT
-						type: STRING, //jackets, coats, blazers, skirts <IS THIS NEEDED?>
-						subType: STRING, //['basics','denim','biker', 'fauxLeather', 'coats', 'trenchCoats', 'cropped', 'suits']<IS THIS NEEDED?>
-						rating: 5,
-						reviewText: 'Great jacket! Fits perfectly and looks stylish.',
-						reviewer: 'John Doe',
-						date: NUM,
+						id: Number, //1,
+						productId: Number, //SAME AS ID OF PRODUCT
+						type: String, //jackets, coats, blazers, skirts <IS THIS NEEDED?>
+						subType: String, //['basics','denim','biker', 'fauxLeather', 'coats', 'trenchCoats', 'cropped', 'suits']<IS THIS NEEDED?>
+						rating: Number, //5
+						reviewText: String, //'Great jacket! Fits perfectly and looks stylish.',
+						reviewer: String, //'John Doe',
+						date: Number,
 					},
 				],
 				bags: [{}],
@@ -512,74 +513,107 @@ const RESULTS = [
 						hexColor: '#e5cf75',
 					},
 				],
-				accessories: [], //is this needed?
+				accessories: [],
+				// check for color redundancy
+				bags: [
+					{
+						color: 'beige',
+						hexColor: '#F5F5DC',
+					},
+					{
+						color: 'black',
+						hexColor: '#000',
+					},
+					{
+						color: 'blue',
+						hexColor: '#0000FF',
+					},
+					{
+						color: 'brown',
+						hexColor: '#A52A2A',
+					},
+					{
+						color: 'green',
+						hexColor: '#008000',
+					},
+					{
+						color: 'gray',
+						hexColor: '#808080',
+					},
+					{
+						color: 'metallic',
+						hexColor: '#e5cf75',
+					},
+					{
+						color: 'red',
+						hexColor: '#FF0000',
+					},
+					{
+						color: 'white',
+						hexColor: '#FFF',
+					},
+				],
 			},
 			men: {},
 			kids: {},
 		},
 		//=====================================================
+		// If properties like type, style, material have specific options, create separate tables for those and reference them using IDs. This enhances data integrity and makes your database more scalable. DO I DO THIS FOR ALL OF THEM? - NORMALIZATION.
 		clothing: {
 			item: {
 				id: Number,
-				category: STRING, //'women, men, kids'
-				type: STRING, //jackets, coats, blazers, skirts, shoes
-				subType: STRING, //['basics','denim','biker', 'fauxLeather', 'coats', 'trenchCoats', 'cropped', 'suits']
-				name: STRING,
-				description: STRING,
+				category: String, //'women, men, kids'
+				type: String, //jackets, coats, blazers, skirts, shoes
+				subType: String, //['basics','denim','biker', 'fauxLeather', 'coats', 'trenchCoats', 'cropped', 'suits']
+				name: String,
+				description: String,
 				price: Number,
-				size: [STRING],
+				size: [String],
 				rating: Number,
-				reviewIds: [], // [4, 5] IDs of reviews for this skirt
-				date: NUM,
-				primaryImage: STRING,
-				secondaryImage: [STRINGS],
-				stylesDetail: {
-					style: [], //["vintage", "boho", "preppy", "modern", 'classic', 'traditional', 'streetwear', 'grunge', 'casual', 'party', 'daily', 'romantic']
-					detail: STRING, //Pleated, Distressed,front zipper,Pockets, bedazzeled
-					fit: STRING, //loose fit, oversized fit, regular fit, Skinny Fit, Slim Fit, Straight Fit, Wide Leg, Bootcut fit, Flare fit, Relaxed Fit
-					color: 'blue',
-					hexColorValue: '#000AAA',
-					hasPattern: false,
-					pattern: STRING, //Solid, Striped, Plaid, Floral, polka dot
-					sleeveLength: STRING, //(e.g., "short sleeve", "long sleeve"), sleeveless, 3/4 sleeve,
-					neckLine: STRING, //(e.g., "crew neck", "v-neck")Button-down Collar, Spread Collar, Mandarin Collar, V-neck, Scoop Neck, round-next, high-neck
-					rise: STRING, //"high-rise", "mid-rise", "low-rise")
-					length: STRING, //length: (for pants/skirts – "ankle", "full length"), Full length, Cropped, Ankle length, Capri
-					fabric: STRING, //'100% Polyester',Denim, Silk, Cotton, Linen, Polyester, Leather (or faux leather), Stretch blends, fleece, wool, cashmere, alpaca,
+				reviewIds: [Number], // [4, 5] IDs of reviews for this skirt NOT SURE IF I NEED THIS PROPERTY.
+				primaryImage: String,
+				secondaryImage: [String],
+				itemDetail: {
+					style: [String], //["vintage", "boho", "preppy", "modern", 'classic', 'traditional', 'streetwear', 'grunge', 'casual', 'party', 'daily', 'romantic']
+					detail: String, //Pleated, Distressed,front zipper,Pockets, bedazzeled
+					fit: String, //loose fit, oversized fit, regular fit, Skinny Fit, Slim Fit, Straight Fit, Wide Leg, Bootcut fit, Flare fit, Relaxed Fit
+					color: String, //'blue',
+					hexColorValue: String, // '#000AAA',
+					hasPattern: Boolean,
+					pattern: String, //Solid, Striped, Plaid, Floral, polka dot
+					sleeveLength: String, //(e.g., "short sleeve", "long sleeve"), sleeveless, 3/4 sleeve,
+					neckLine: String, //(e.g., "crew neck", "v-neck")Button-down Collar, Spread Collar, Mandarin Collar, V-neck, Scoop Neck, round-next, high-neck
+					rise: String, //"high-rise", "mid-rise", "low-rise")
+					length: String, //length: (for pants/skirts – "ankle", "full length"), Full length, Cropped, Ankle length, Capri
+					fabric: String, //'100% Polyester',Denim, Silk, Cotton, Linen, Polyester, Leather (or faux leather), Stretch blends, fleece, wool, cashmere, alpaca,
 				},
 				availability: {
-					inStock: true,
+					inStock: Boolean,
 					quantity: Number,
-					restockDate: STRING,
-					sku: NUM, //ABC-12345-BLK-S
+					restockDate: String,
+					sku: Number, //ABC-12345-BLK-S
 					comingSoon: Boolean,
 				},
 				productDetails: {
-					careInstructions:
-						'Machine wash cold, gentle cycle. Do not bleach. Tumble dry low. Cool iron if needed.',
-					styleFeatures:
-						'Adjustable drawstring hood, snap button cuffs, flap pockets, hidden zip closure.',
-					closure: 'Front hidden zip and snap button closure.',
-					designDetails:
-						'Elastic drawstring hood, side elastic hem, snap button cuffs.',
-					functionality:
-						'Front flap pockets for storage, adjustable hem for a customized fit.',
-					occasion:
-						'Suitable for casual wear, outdoor activities, and everyday use.',
+					careInstructions: String, //'Machine wash cold, gentle cycle. Do not bleach. Tumble dry low. Cool iron if needed.',
+					styleFeatures: String, //	'Adjustable drawstring hood, snap button cuffs, flap pockets, hidden zip closure.',
+					closure: String, //'Front hidden zip and snap button closure.',
+					designDetails: String, // 'Elastic drawstring hood, side elastic hem, snap button cuffs.',
+					functionality: String, // 'Front flap pockets for storage, adjustable hem for a customized fit.',
+					occasion: String, // 'Suitable for casual wear, outdoor activities, and everyday use.',
 					brandInfo: {
-						name: 'Example Brand',
-						origin: 'United States',
-						about:
-							'Example Brand is committed to creating high-quality, stylish apparel for modern individuals. Our designs combine functionality, comfort, and fashion-forward aesthetics to meet the needs of our customers.',
+						brand: String, //'Example Brand',
+						origin: String, //'United States',
+						about: String, // 'Example Brand is committed to creating high-quality, stylish apparel for modern individuals. Our designs combine functionality, comfort, and fashion-forward aesthetics to meet the needs of our customers.',
 					},
-					additionalFeatures: 'Water-resistant fabric, UV protection.',
+					additionalFeatures: String, //'Water-resistant fabric, UV protection.',
 				},
 				availableOptions: {
-					availableSizes: [STRING],
-					primaryImage: STRING,
-					secondaryImage: [STRINGS],
-					color: 'blue',
-					hexColorValue: '#000AAA',
+					availableSizes: [String],
+					primaryImage: String,
+					secondaryImage: [String],
+					color: String, //'blue',
+					hexColorValue: String, //'#000AAA',
 				},
 			},
 		},
@@ -645,145 +679,43 @@ const RESULTS = [
 			item: {},
 		},
 		bags: {
-			item: {},
+			item: {
+				id: Number,
+				category: String, // women
+				type: String, //
+				name: String,
+				description: String,
+				rating: String,
+				reviewIds: [Number], // [4, 5] IDs of reviews for this skirt NOT SURE IF I NEED THIS PROPERTY.
+				price: Number,
+				primaryImage: String,
+				secondaryImages: [String],
+				size: String, // 'Small', 'Medium', 'Large' or  { height: Number, width: Number, depth: Number}
+				capacity: String,
+				hardware: {
+					type: String, // 'Brass', 'Silver', etc.
+					color: String,
+				},
+				color: String,
+				hexColorValue: String, //'#000AAA'
+				pattern: String,
+				weight: Number,
+				itemDetails: {
+					material: String,
+					lining: String,
+					handleType: [String], //  ['Shoulder Strap', 'Top Handles']
+					closureType: String,
+					waterResistance: Boolean,
+					interiorPockets: Number,
+					exteriorPockes: Number,
+				},
+				brandInfo: {
+					brand: String,
+					origin: String,
+					about: String,
+				},
+				careInstructions: String,
+			},
 		},
 	},
 ];
-
-// =========================ADDITIONAL EXAMPLES============================
-// const shirtsAndBlouses = [
-// 	{
-// 		type: 'shirt',
-// 		subType: 'dressShirt',
-// 		style: ['modern'],
-// 		fabric: 'cotton',
-// 		fit: 'slim fit',
-// 		sleeveLength: 'long sleeve',
-// 		neckline: 'button-down collar',
-// 		pattern: 'solid',
-// 		// ...other details
-// 	},
-// 	{
-// 		type: 'blouse',
-// 		subType: 'wrap',
-// 		style: ['boho'],
-// 		fabric: 'silk',
-// 		fit: 'relaxed fit',
-// 		sleeveLength: '3/4 sleeve',
-// 		neckline: 'v-neck',
-// 		pattern: 'floral',
-// 		// ...other details
-// 	},
-// 	// ... more items
-// ];
-
-// const sweatersAndCardigans = [
-// 	{
-// 		type: 'sweater',
-// 		subType: 'crewneck',
-// 		style: ['classic', 'cableKnit'],
-// 		fabric: 'wool',
-// 		knit: 'cableKnit',
-// 		sleeveLength: 'long sleeve',
-// 		fit: 'regular fit',
-// 		// ...other details (color, price, images, etc.)
-// 	},
-// 	{
-// 		type: 'cardigan',
-// 		subType: 'buttonFront',
-// 		style: ['oversized'],
-// 		fabric: 'acrylic',
-// 		knit: 'ribbed',
-// 		sleeveLength: 'long sleeve',
-// 		fit: 'oversized fit',
-// 		// ...other details (color, price, images, etc.)
-// 	},
-// 	// ... more items
-// ];
-
-// const sweatshirts = [
-// 	{
-// 		type: 'hoodie',
-// 		subType: 'zipUp',
-// 		style: ['graphic', 'vintage'],
-// 		fabric: 'fleece',
-// 		weight: 'midweight',
-// 		fit: 'regular fit',
-// 		details: ['drawstrings', 'kangaroo pocket'],
-// 		// ...other details (color, price, images, etc.)
-// 	},
-// 	{
-// 		type: 'sweatshirt',
-// 		subType: 'crewneck',
-// 		style: ['solid', 'oversized'],
-// 		fabric: 'cotton',
-// 		weight: 'heavyweight',
-// 		fit: 'oversized fit',
-// 		details: ['ribbed cuffs'],
-// 		// ...other details (color, price, images, etc.)
-// 	},
-// 	// ... more items
-// ];
-
-// const womensPants = [
-// 	{
-// 		type: 'jeans',
-// 		subType: 'skinny',
-// 		style: ['highWaisted', 'distressed'],
-// 		fabric: 'denim',
-// 		fit: 'skinny fit',
-// 		rise: 'high-rise',
-// 		length: 'full length',
-// 		details: ['pockets'],
-// 		// ...other details (color, price, images, etc.)
-// 	},
-// 	{
-// 		type: 'pants',
-// 		subType: 'dressPants',
-// 		style: ['paperbagWaist'],
-// 		fabric: 'linen',
-// 		fit: 'wide leg',
-// 		rise: 'high-rise',
-// 		length: 'ankle length',
-// 		details: ['pleated'],
-// 		// ...other details (color, price, images, etc.)
-// 	},
-// 	// ... more items
-// ];
-
-// TOPS: BODYSUITS, CROPTOPS
-// category: STRING, //'women'
-// type: STRING, //'bodysuits, cropTops, halterTops'
-// subType: STRING, //['sleeveless', 'long sleeves', 'cutOut']
-
-// DRESSES
-// category: STRING, //'women'
-// type: STRING, //'dresses'
-// subType: STRING, //mini/midi/maxi/jumpsuit/shirt dresses/prints
-
-// T-SHIRTS
-// category: STRING, //'women'
-// type: STRING, //'t-shirts'
-// subType: STRING, //short sleeve, long sleeve, basics, printed graphics, tank-tops, overavailableSizes
-// style: [],
-// collarType: [], // round-neck, v-neck, crew-neck
-
-// SHIRTS & BLOUSES
-// category: STRING, //'women'
-// type: STRING, //'shirt || blouse'
-// subType: STRING, // [strips, printed, satin, dressshirt]
-
-// sweaters & cardigans
-// category: STRING, //'women'
-// type: STRING, //'sweater || cardigan'
-// subType: STRING, //[buttonfront, round-neck, v-neck, open-front, turtle-nect]
-
-// sweatshirts
-// category: STRING, //'women'
-// type: STRING, //'sweatshirt
-// subType: STRING, // hoodie, shortsleave, long sleave, zipup, overavailableSizesd, printed cropped
-
-// pants
-// category: STRING, //'women'
-// type: STRING, //'pants
-// subType: STRING, // formal, wideleg, joggers, basic, high-waisted
