@@ -222,7 +222,18 @@ const RESULTS = [
 						date: Number,
 					},
 				],
-				bags: [{}],
+				bags: [
+					{
+						id: Number, //1
+						productId: Number, //SAME AS ID OF PRODUCT
+						type: String, //jackets, coats, blazers, skirts <IS THIS NEEDED?>
+						subType: String, //['basics','denim','biker', 'fauxLeather', 'coats', 'trenchCoats', 'cropped', 'suits']<IS THIS NEEDED?>
+						rating: Number, //5
+						reviewText: String, //'Great jacket! Fits perfectly and looks stylish.',
+						reviewer: String, //'John Doe',
+						date: Number,
+					},
+				],
 				shoes: [{}],
 				accessories: [{}],
 			},
@@ -262,7 +273,8 @@ const RESULTS = [
 			},
 		},
 		//=====================================================
-		// FIX THE SIZES. FOCUS ON COMMON SIZES AND REMOVE EDGE CASES TO REDUCE REDUNDANCY
+		// FIX THE SIZES. FOCUS ON COMMON SIZES AND REMOVE EDGE CASES TO REDUCE REDUNDANCY.
+		// clothing sizes...
 		// how will I plan on storing this? cant store such big objects? need to optimize and link section through a common product id....interface..when and how this data will be used..think of things in relationships. how to query based on product id and suchs..
 		allSizes: {
 			women: {
@@ -570,10 +582,14 @@ const RESULTS = [
 				price: Number,
 				size: [String],
 				rating: Number,
-				reviewIds: [Number], // [4, 5] IDs of reviews for this skirt NOT SURE IF I NEED THIS PROPERTY.
+				reviewIds: [Number], // [4, 5] IDs of reviews for this skirt NOT SURE IF I NEED THIS PROPERTY.  may not need.
 				primaryImage: String,
 				secondaryImage: [String],
-				itemDetail: {
+				season: String, // fall winter summer spring
+				careInstructions: String, //'Machine wash cold, gentle cycle. Do not bleach. Tumble dry low. Cool iron if needed.',
+				features: [String], //	'Adjustable drawstring hood, snap button cuffs, flap pockets, hidden zip closure.',
+				comingSoon: Boolean,
+				styleDetail: {
 					style: [String], //["vintage", "boho", "preppy", "modern", 'classic', 'traditional', 'streetwear', 'grunge', 'casual', 'party', 'daily', 'romantic']
 					detail: String, //Pleated, Distressed,front zipper,Pockets, bedazzeled
 					fit: String, //loose fit, oversized fit, regular fit, Skinny Fit, Slim Fit, Straight Fit, Wide Leg, Bootcut fit, Flare fit, Relaxed Fit
@@ -590,22 +606,17 @@ const RESULTS = [
 				availability: {
 					inStock: Boolean,
 					quantity: Number,
-					restockDate: String,
-					sku: Number, //ABC-12345-BLK-S
-					comingSoon: Boolean,
 				},
-				productDetails: {
-					careInstructions: String, //'Machine wash cold, gentle cycle. Do not bleach. Tumble dry low. Cool iron if needed.',
-					styleFeatures: String, //	'Adjustable drawstring hood, snap button cuffs, flap pockets, hidden zip closure.',
+				brandInfo: {
+					brand: String, //'Example Brand',
+					countryOfOrigin: String, //'United States',
+					about: String, // 'Example Brand is committed to creating high-quality, stylish apparel for modern individuals. Our designs combine functionality, comfort, and fashion-forward aesthetics to meet the needs of our customers.',
+				},
+				itemDetails: {
 					closure: String, //'Front hidden zip and snap button closure.',
 					designDetails: String, // 'Elastic drawstring hood, side elastic hem, snap button cuffs.',
 					functionality: String, // 'Front flap pockets for storage, adjustable hem for a customized fit.',
 					occasion: String, // 'Suitable for casual wear, outdoor activities, and everyday use.',
-					brandInfo: {
-						brand: String, //'Example Brand',
-						origin: String, //'United States',
-						about: String, // 'Example Brand is committed to creating high-quality, stylish apparel for modern individuals. Our designs combine functionality, comfort, and fashion-forward aesthetics to meet the needs of our customers.',
-					},
 					additionalFeatures: String, //'Water-resistant fabric, UV protection.',
 				},
 				availableOptions: {
@@ -620,18 +631,23 @@ const RESULTS = [
 		footwear: {
 			item: {
 				id: Number,
-				category: STRING, //women
+				category: String, //women
 				season: String,
-				type: STRING, //LOAFERS,PLATFORMS,PUMPS,SNEAKERS,HEELED SHOES,FISHERMAN SANDALS, WEDGES, SANDALS, CLOGS, BOOTS, ANKLE BOOTS, SPORT SHOES, BALLET FLATS,MULES
-				name: STRING,
-				description: STRING,
+				type: String, //LOAFERS,PLATFORMS,PUMPS,SNEAKERS,HEELED SHOES,FISHERMAN SANDALS, WEDGES, SANDALS, CLOGS, BOOTS, ANKLE BOOTS, SPORT SHOES, BALLET FLATS,MULES
+				name: String,
+				description: String,
 				price: Number,
-				size: [STRING],
+				size: [String],
 				rating: Number,
-				reviewIds: [],
-				primaryImage: STRING,
-				secondaryImage: [STRINGS],
+				reviewIds: [Number], //May not need
+				primaryImage: String,
+				secondaryImage: [String],
 				waterResistance: Boolean,
+				season: String, // fall winter summer spring
+				careInstructions: String, //'Machine wash cold, gentle cycle. Do not bleach. Tumble dry low. Cool iron if needed.',
+				occasion: String, //'Suitable for casual wear, outdoor activities, and everyday use.',
+				comingSoon: Boolean,
+				features: [String], //'Water-resistant fabric, UV protection.',
 				materialsDetail: {
 					upperMaterial: String,
 					liningMaterial: String,
@@ -639,82 +655,136 @@ const RESULTS = [
 				},
 				// If properties like type, style, material have specific options, create separate tables for those and reference them using IDs. This enhances data integrity and makes your database more scalable. DO I DO THIS FOR ALL OF THEM?
 				stylesDetail: {
-					style: [], //['casual', "daily", 'upscale', 'professional', "classic",]
-					color: 'blue',
-					hexColorValue: '#000AAA',
-					width: ['Regular', 'Wide', 'Narrow'],
-					closureType: ['Laces', 'Buckle', 'Slip-on'],
+					style: [String], //['casual', "daily", 'upscale', 'professional', "classic",]
+					color: String, // 'blue',
+					hexColorValue: String, //'#000AAA',
+					width: [String], //['Regular', 'Wide', 'Narrow'],
+					closureType: [String], //['Laces', 'Buckle', 'Slip-on'],
 					heelHeight: Number, //(inches or cm)
 					soleHeight: Number,
-					patern: STRING, // plain,
-					heelType: STRING, // hem, block, wedge, platform, high, medium, flat
+					patern: String, // plain,
+					heelType: String, // hem, block, wedge, platform, high, medium, flat
 				},
 				availability: {
 					inStock: true,
 					quantity: Number,
 				},
 				brandInfo: {
-					brand: 'Example Brand',
-					countryOfOrigin: 'United States',
-					about:
-						'Example Brand is committed to creating high-quality, stylish apparel for modern individuals. Our designs combine functionality, comfort, and fashion-forward aesthetics to meet the needs of our customers.',
-				},
-				features: {
-					careInstructions:
-						'Machine wash cold, gentle cycle. Do not bleach. Tumble dry low. Cool iron if needed.',
-					occasion:
-						'Suitable for casual wear, outdoor activities, and everyday use.',
-					additionalFeatures: 'Water-resistant fabric, UV protection.',
+					brand: String, //'Example Brand',
+					countryOfOrigin: String, //'United States',
+					about: String, // 'Example Brand is committed to creating high-quality, stylish apparel for modern individuals. Our designs combine functionality, comfort, and fashion-forward aesthetics to meet the needs of our customers.',
 				},
 				availableOptions: {
-					availableSizes: [STRING],
-					primaryImage: STRING,
-					secondaryImage: [STRINGS],
-					color: 'blue',
-					hexColorValue: '#000AAA',
+					availableSizes: [String],
+					primaryImage: String,
+					secondaryImage: [String],
+					color: String, //'blue',
+					hexColorValue: String, //'#000AAA',
 				},
 			},
-		},
-		accessories: {
-			item: {},
 		},
 		bags: {
 			item: {
 				id: Number,
 				category: String, // women
-				type: String, //
+				type: String, // BUCKET BAG, SHOULDER BAG, PHONE BAG, CROSSBODY BAG, TOTE BAGS, BOWLING BAG, CLUTCH, HANDBAG, BRIEFCASE, mini bag
 				name: String,
 				description: String,
-				rating: String,
-				reviewIds: [Number], // [4, 5] IDs of reviews for this skirt NOT SURE IF I NEED THIS PROPERTY.
+				rating: Number,
+				reviewIds: [Number], // [4, 5] IDs of reviews for this skirt NOT SURE IF I NEED THIS PROPERTY. May remove
 				price: Number,
 				primaryImage: String,
 				secondaryImages: [String],
-				size: String, // 'Small', 'Medium', 'Large' or  { height: Number, width: Number, depth: Number}
-				capacity: String,
+				weight: Number,
+				size: {
+					height: Number,
+					width: Number,
+					depth: Number,
+				},
+				capacity: String, // may not need.
+				color: String,
+				hexColorValue: String, //'#000AAA'
+				pattern: String,
+				occasion: String,
+				careInstructions: String,
+				comingSoon: Boolean,
 				hardware: {
 					type: String, // 'Brass', 'Silver', etc.
 					color: String,
 				},
-				color: String,
-				hexColorValue: String, //'#000AAA'
-				pattern: String,
-				weight: Number,
 				itemDetails: {
-					material: String,
+					material: String, //Letther/.
 					lining: String,
-					handleType: [String], //  ['Shoulder Strap', 'Top Handles']
-					closureType: String,
+					handleType: [String], //   ['Detachable Shoulder Strap', 'Top Handles']
+					closureType: String, // may not need
 					waterResistance: Boolean,
 					interiorPockets: Number,
 					exteriorPockes: Number,
 				},
 				brandInfo: {
-					brand: String,
-					origin: String,
-					about: String,
+					brand: String, //'Example Brand',
+					countryOfOrigin: String, //'United States',
+					about: String, // 'Example Brand is committed to creating high-quality, stylish apparel for modern individuals. Our designs combine functionality, comfort, and fashion-forward aesthetics to meet the needs of our customers.',
 				},
-				careInstructions: String,
+				availability: {
+					inStock: Boolean,
+					quantity: Number,
+				},
+				availableOptions: {
+					sizes: [String], //MAY NOT NEED
+					primaryImage: String,
+					secondaryImages: [String],
+					color: String,
+					hexColorValue: String,
+				},
+			},
+		},
+		accessories: {
+			item: {
+				id: Number,
+				category: String, // men women
+				type: String, // 'Jewelry', 'Hats', 'Scarves', 'Belts', 'Sunglasses', ...
+				// MAKE THIS BETTER
+				typeProperties: {
+					type: String, //earings, necklace,
+					gemstone: String,
+					closureType: String,
+					brimSize: Number,
+					crownHeight: Number,
+					shape: String,
+				},
+				name: String,
+				description: String,
+				price: Number,
+				primaryImage: String,
+				secondaryImages: [String],
+				material: String, // 'Gold', 'Leather', 'Silk', ...
+				color: String,
+				pattern: String, // 'Solid', 'Striped', 'Floral', ...
+				size: String, // 'One Size Fits All', 'Adjustable' or { length: Number, width: Number, diameter: Number} or [S,M,L]
+				season: String, // 'Summer', 'Winter', 'All-Season'
+				gender: String, // 'Women', 'Men', 'Unisex'
+				careInstructions: String, //'Machine wash cold, gentle cycle. Do not bleach. Tumble dry low. Cool iron if needed.',
+				occasion: String, //'Suitable for casual wear, outdoor activities, and everyday use.','Everyday', 'Formal', ...
+				comingSoon: Boolean,
+				features: [String], //'Water-resistant fabric, UV protection.','Hypoallergenic', 'Water-Resistant', ...
+				brandInfo: {
+					brand: String, //'Example Brand',
+					countryOfOrigin: String, //'United States',
+					about: String, // 'Example Brand is committed to creating high-quality, stylish apparel for modern individuals. Our designs combine functionality, comfort, and fashion-forward aesthetics to meet the needs of our customers.',
+				},
+				availableOptions: {
+					sizes: [String], //MAY NOT NEED
+					materials: [String],
+					primaryImage: String,
+					secondaryImages: [String],
+					color: String,
+					hexColorValue: String,
+				},
+				availability: {
+					inStock: Boolean,
+					quantity: Number,
+				},
 			},
 		},
 	},
