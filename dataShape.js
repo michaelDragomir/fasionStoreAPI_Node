@@ -637,7 +637,7 @@ const RESULTS = [
 				name: String,
 				description: String,
 				price: Number,
-				size: [String],
+				size: [String], //may not need this...you're going to have available options when lo
 				rating: Number,
 				reviewIds: [Number], //May not need
 				primaryImage: String,
@@ -744,14 +744,33 @@ const RESULTS = [
 				id: Number,
 				category: String, // men women
 				type: String, // 'Jewelry', 'Hats', 'Scarves', 'Belts', 'Sunglasses', ...
-				// MAKE THIS BETTER
 				typeProperties: {
-					type: String, //earings, necklace,
-					gemstone: String,
-					closureType: String,
-					brimSize: Number,
-					crownHeight: Number,
-					shape: String,
+					jewelry: {
+						type: String, // 'Necklace', 'Earrings', 'Bracelet', ...
+						gemstone: String,
+						closureType: String,
+					},
+					hats: {
+						brimSize: Number, // may not use this..
+						crownHeight: Number, // may not use this.
+						size: Number,
+					},
+					scarves: {
+						shape: String,
+						width: Number,
+						height: Number,
+					},
+					belts: {
+						buckleType: String, //('Pin Buckle', 'Frame Buckle', 'Plate Buckle', 'Snap', etc.)
+						width: Number, //(in inches or centimeters)
+						strapMaterial: String, //('Leather', 'Canvas', 'Synthetic', 'Braided', etc.)
+					},
+					sunglasses: {
+						frameShape: String, //('Round', 'Square', 'Aviator', 'Cat-Eye', 'Wayfarer', etc.)
+						frameMaterial: String, //('Metal', 'Plastic', 'Acetate', 'Wood', etc.)
+						lensColor: String, //('Brown', 'Grey', 'Gradient', 'Mirrored', etc.)
+						lensType: String, //('Polarized', 'UV400', 'Photochromic', etc.)
+					},
 				},
 				name: String,
 				description: String,
