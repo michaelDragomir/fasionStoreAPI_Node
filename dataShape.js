@@ -234,8 +234,30 @@ const RESULTS = [
 						date: Number,
 					},
 				],
-				shoes: [{}],
-				accessories: [{}],
+				shoes: [
+					{
+						id: Number, //1
+						productId: Number, //SAME AS ID OF PRODUCT
+						type: String, //jackets, coats, blazers, skirts <IS THIS NEEDED?>
+						subType: String, //['basics','denim','biker', 'fauxLeather', 'coats', 'trenchCoats', 'cropped', 'suits']<IS THIS NEEDED?>
+						rating: Number, //5
+						reviewText: String, //'Great jacket! Fits perfectly and looks stylish.',
+						reviewer: String, //'John Doe',
+						date: Number,
+					},
+				],
+				accessories: [
+					{
+						id: Number, //1
+						productId: Number, //SAME AS ID OF PRODUCT
+						type: String, //jackets, coats, blazers, skirts <IS THIS NEEDED?>
+						subType: String, //['basics','denim','biker', 'fauxLeather', 'coats', 'trenchCoats', 'cropped', 'suits']<IS THIS NEEDED?>
+						rating: Number, //5
+						reviewText: String, //'Great jacket! Fits perfectly and looks stylish.',
+						reviewer: String, //'John Doe',
+						date: Number,
+					},
+				],
 			},
 			men: {
 				clothes: [
@@ -250,9 +272,42 @@ const RESULTS = [
 						date: Number,
 					},
 				],
-				bags: [{}],
-				shoes: [{}],
-				accessories: [{}],
+				bags: [
+					{
+						id: Number, //1,
+						productId: Number, //SAME AS ID OF PRODUCT
+						type: String, //jackets, coats, blazers, skirts <IS THIS NEEDED?>
+						subType: String, //['basics','denim','biker', 'fauxLeather', 'coats', 'trenchCoats', 'cropped', 'suits']<IS THIS NEEDED?>
+						rating: Number, //5
+						reviewText: String, //'Great jacket! Fits perfectly and looks stylish.',
+						reviewer: String, //'John Doe',
+						date: Number,
+					},
+				],
+				shoes: [
+					{
+						id: Number, //1,
+						productId: Number, //SAME AS ID OF PRODUCT
+						type: String, //jackets, coats, blazers, skirts <IS THIS NEEDED?>
+						subType: String, //['basics','denim','biker', 'fauxLeather', 'coats', 'trenchCoats', 'cropped', 'suits']<IS THIS NEEDED?>
+						rating: Number, //5
+						reviewText: String, //'Great jacket! Fits perfectly and looks stylish.',
+						reviewer: String, //'John Doe',
+						date: Number,
+					},
+				],
+				accessories: [
+					{
+						id: Number, //1,
+						productId: Number, //SAME AS ID OF PRODUCT
+						type: String, //jackets, coats, blazers, skirts <IS THIS NEEDED?>
+						subType: String, //['basics','denim','biker', 'fauxLeather', 'coats', 'trenchCoats', 'cropped', 'suits']<IS THIS NEEDED?>
+						rating: Number, //5
+						reviewText: String, //'Great jacket! Fits perfectly and looks stylish.',
+						reviewer: String, //'John Doe',
+						date: Number,
+					},
+				],
 			},
 			kids: {
 				clothes: [
@@ -267,9 +322,42 @@ const RESULTS = [
 						date: Number,
 					},
 				],
-				bags: [{}],
-				shoes: [{}],
-				accessories: [{}],
+				bags: [
+					{
+						id: Number, //1,
+						productId: Number, //SAME AS ID OF PRODUCT
+						type: String, //jackets, coats, blazers, skirts <IS THIS NEEDED?>
+						subType: String, //['basics','denim','biker', 'fauxLeather', 'coats', 'trenchCoats', 'cropped', 'suits']<IS THIS NEEDED?>
+						rating: Number, //5
+						reviewText: String, //'Great jacket! Fits perfectly and looks stylish.',
+						reviewer: String, //'John Doe',
+						date: Number,
+					},
+				],
+				shoes: [
+					{
+						id: Number, //1,
+						productId: Number, //SAME AS ID OF PRODUCT
+						type: String, //jackets, coats, blazers, skirts <IS THIS NEEDED?>
+						subType: String, //['basics','denim','biker', 'fauxLeather', 'coats', 'trenchCoats', 'cropped', 'suits']<IS THIS NEEDED?>
+						rating: Number, //5
+						reviewText: String, //'Great jacket! Fits perfectly and looks stylish.',
+						reviewer: String, //'John Doe',
+						date: Number,
+					},
+				],
+				accessories: [
+					{
+						id: Number, //1,
+						productId: Number, //SAME AS ID OF PRODUCT
+						type: String, //jackets, coats, blazers, skirts <IS THIS NEEDED?>
+						subType: String, //['basics','denim','biker', 'fauxLeather', 'coats', 'trenchCoats', 'cropped', 'suits']<IS THIS NEEDED?>
+						rating: Number, //5
+						reviewText: String, //'Great jacket! Fits perfectly and looks stylish.',
+						reviewer: String, //'John Doe',
+						date: Number,
+					},
+				],
 			},
 		},
 		//=====================================================
@@ -281,25 +369,23 @@ const RESULTS = [
 				bottoms: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'],
 				tops: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL'],
 				shoes: [5, 6, 7, 8, 9, 10, 11, 12],
-				accessories: [], //is this needed?
 			},
 			men: {
 				//fix
 				bottoms: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'],
 				tops: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL'],
 				shoes: [],
-				accessories: [], //is this needed?
 			},
 			kids: {
 				//fix
 				bottoms: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'],
 				tops: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL'],
 				shoes: [],
-				accessories: [], //is this needed?
 			},
 		},
 		//=====================================================
 		allColors: {
+			// check for color redundancy
 			women: {
 				all: [
 					{
@@ -525,8 +611,60 @@ const RESULTS = [
 						hexColor: '#e5cf75',
 					},
 				],
-				accessories: [],
-				// check for color redundancy
+				accessories: [
+					{
+						color: 'beige',
+						hexColor: '#F5F5DC',
+					},
+					{
+						color: 'black',
+						hexColor: '#000',
+					},
+					{
+						color: 'blue',
+						hexColor: '#0000FF',
+					},
+					{
+						color: 'brown',
+						hexColor: '#A52A2A',
+					},
+					{
+						color: 'green',
+						hexColor: '#008000',
+					},
+					{
+						color: 'gray',
+						hexColor: '#808080',
+					},
+					{
+						color: 'metallic',
+						hexColor: '#e5cf75',
+					},
+					{
+						color: 'red',
+						hexColor: '#FF0000',
+					},
+					{
+						color: 'white',
+						hexColor: '#FFF',
+					},
+					{
+						color: 'pink',
+						hexColor: '#FFC0CB',
+					},
+					{
+						color: 'printed',
+						hexColor: '#FFF',
+					},
+					{
+						color: 'yellow',
+						hexColor: '#FFAE42',
+					},
+					{
+						color: 'orange',
+						hexColor: '#FFA500',
+					},
+				],
 				bags: [
 					{
 						color: 'beige',
@@ -589,6 +727,7 @@ const RESULTS = [
 				careInstructions: String, //'Machine wash cold, gentle cycle. Do not bleach. Tumble dry low. Cool iron if needed.',
 				features: [String], //	'Adjustable drawstring hood, snap button cuffs, flap pockets, hidden zip closure.',
 				comingSoon: Boolean,
+				occasion: String, // 'Suitable for casual wear, outdoor activities, and everyday use.',
 				styleDetail: {
 					style: [String], //["vintage", "boho", "preppy", "modern", 'classic', 'traditional', 'streetwear', 'grunge', 'casual', 'party', 'daily', 'romantic']
 					detail: String, //Pleated, Distressed,front zipper,Pockets, bedazzeled
@@ -602,22 +741,17 @@ const RESULTS = [
 					rise: String, //"high-rise", "mid-rise", "low-rise")
 					length: String, //length: (for pants/skirts – "ankle", "full length"), Full length, Cropped, Ankle length, Capri
 					fabric: String, //'100% Polyester',Denim, Silk, Cotton, Linen, Polyester, Leather (or faux leather), Stretch blends, fleece, wool, cashmere, alpaca,
-				},
-				availability: {
-					inStock: Boolean,
-					quantity: Number,
+					closure: String, //'Front hidden zip and snap button closure.',
+					designDetails: String, // 'Elastic drawstring hood, side elastic hem, snap button cuffs.',
 				},
 				brandInfo: {
 					brand: String, //'Example Brand',
 					countryOfOrigin: String, //'United States',
 					about: String, // 'Example Brand is committed to creating high-quality, stylish apparel for modern individuals. Our designs combine functionality, comfort, and fashion-forward aesthetics to meet the needs of our customers.',
 				},
-				itemDetails: {
-					closure: String, //'Front hidden zip and snap button closure.',
-					designDetails: String, // 'Elastic drawstring hood, side elastic hem, snap button cuffs.',
-					functionality: String, // 'Front flap pockets for storage, adjustable hem for a customized fit.',
-					occasion: String, // 'Suitable for casual wear, outdoor activities, and everyday use.',
-					additionalFeatures: String, //'Water-resistant fabric, UV protection.',
+				availability: {
+					inStock: Boolean,
+					quantity: Number,
 				},
 				availableOptions: {
 					availableSizes: [String],
@@ -632,7 +766,6 @@ const RESULTS = [
 			item: {
 				id: Number,
 				category: String, //women
-				season: String,
 				type: String, //LOAFERS,PLATFORMS,PUMPS,SNEAKERS,HEELED SHOES,FISHERMAN SANDALS, WEDGES, SANDALS, CLOGS, BOOTS, ANKLE BOOTS, SPORT SHOES, BALLET FLATS,MULES
 				name: String,
 				description: String,
@@ -642,18 +775,11 @@ const RESULTS = [
 				reviewIds: [Number], //May not need
 				primaryImage: String,
 				secondaryImage: [String],
-				waterResistance: Boolean,
 				season: String, // fall winter summer spring
 				careInstructions: String, //'Machine wash cold, gentle cycle. Do not bleach. Tumble dry low. Cool iron if needed.',
 				occasion: String, //'Suitable for casual wear, outdoor activities, and everyday use.',
 				comingSoon: Boolean,
 				features: [String], //'Water-resistant fabric, UV protection.',
-				materialsDetail: {
-					upperMaterial: String,
-					liningMaterial: String,
-					soleMaterial: String,
-				},
-				// If properties like type, style, material have specific options, create separate tables for those and reference them using IDs. This enhances data integrity and makes your database more scalable. DO I DO THIS FOR ALL OF THEM?
 				stylesDetail: {
 					style: [String], //['casual', "daily", 'upscale', 'professional', "classic",]
 					color: String, // 'blue',
@@ -665,14 +791,20 @@ const RESULTS = [
 					patern: String, // plain,
 					heelType: String, // hem, block, wedge, platform, high, medium, flat
 				},
-				availability: {
-					inStock: true,
-					quantity: Number,
+				materialsDetail: {
+					upperMaterial: String,
+					liningMaterial: String,
+					soleMaterial: String,
 				},
+				// If properties like type, style, material have specific options, create separate tables for those and reference them using IDs. This enhances data integrity and makes your database more scalable. DO I DO THIS FOR ALL OF THEM?
 				brandInfo: {
 					brand: String, //'Example Brand',
 					countryOfOrigin: String, //'United States',
 					about: String, // 'Example Brand is committed to creating high-quality, stylish apparel for modern individuals. Our designs combine functionality, comfort, and fashion-forward aesthetics to meet the needs of our customers.',
+				},
+				availability: {
+					inStock: true,
+					quantity: Number,
 				},
 				availableOptions: {
 					availableSizes: [String],
@@ -696,30 +828,29 @@ const RESULTS = [
 				primaryImage: String,
 				secondaryImages: [String],
 				weight: Number,
-				size: {
-					height: Number,
-					width: Number,
-					depth: Number,
-				},
 				capacity: String, // may not need.
 				color: String,
 				hexColorValue: String, //'#000AAA'
 				pattern: String,
 				occasion: String,
+				season: Boolean,
 				careInstructions: String,
 				comingSoon: Boolean,
-				hardware: {
-					type: String, // 'Brass', 'Silver', etc.
-					color: String,
-				},
-				itemDetails: {
+				features: [String], //'Water-resistant fabric, UV protection.',
+				styleDetail: {
 					material: String, //Letther/.
 					lining: String,
 					handleType: [String], //   ['Detachable Shoulder Strap', 'Top Handles']
 					closureType: String, // may not need
-					waterResistance: Boolean,
 					interiorPockets: Number,
 					exteriorPockes: Number,
+					type: String, // 'Brass', 'Silver', etc.
+					color: String,
+				},
+				size: {
+					height: Number,
+					width: Number,
+					depth: Number,
 				},
 				brandInfo: {
 					brand: String, //'Example Brand',
@@ -792,6 +923,10 @@ const RESULTS = [
 					countryOfOrigin: String, //'United States',
 					about: String, // 'Example Brand is committed to creating high-quality, stylish apparel for modern individuals. Our designs combine functionality, comfort, and fashion-forward aesthetics to meet the needs of our customers.',
 				},
+				availability: {
+					inStock: Boolean,
+					quantity: Number,
+				},
 				availableOptions: {
 					sizes: [String], //MAY NOT NEED
 					materials: [String],
@@ -799,10 +934,6 @@ const RESULTS = [
 					secondaryImages: [String],
 					color: String,
 					hexColorValue: String,
-				},
-				availability: {
-					inStock: Boolean,
-					quantity: Number,
 				},
 			},
 		},
