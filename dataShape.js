@@ -364,8 +364,8 @@ const RESULTS = [
 			},
 			men: {
 				//fix
-				bottoms: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'],
-				tops: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL'],
+				bottoms: ['36', '38', '40', '44', '46', 'S', 'M', 'L', 'XL'],
+				tops: ['S', 'M', 'L', 'XL', 'XXL'],
 				shoes: [5, 6, 7, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 13, 14],
 				accessories: ['S', 'M', 'L', 'XL'],
 			},
@@ -736,7 +736,7 @@ const RESULTS = [
 						hexColor: '#FFF',
 					},
 					{
-						color: 'orange',
+						color: 'orange', //remove
 						hexColor: '#FFA500',
 					},
 				],
@@ -940,22 +940,25 @@ const RESULTS = [
 				id: Number,
 				category: String, // men women
 				type: String, // 'Jewelry', 'Hats', 'Scarves', 'Belts', 'Sunglasses', ...
+				subtype: String, // 'Necklace', 'Earrings', 'Bracelet', ...
 				typeProperties: {
 					jewelry: {
-						type: String, // 'Necklace', 'Earrings', 'Bracelet', ...
 						gemstone: String,
 						closureType: String,
 						size: String,
+						material: String, // 'Gold', 'Leather', 'Silk', ...
 					},
 					hats: {
 						brimSize: Number, // may not use this..
 						crownHeight: Number, // may not use this.
 						size: Number,
+						material: String, // 'Gold', 'Leather', 'Silk', ...
 					},
 					scarves: {
 						shape: String,
 						width: Number,
 						height: Number,
+						material: String, // 'Gold', 'Leather', 'Silk', ...
 					},
 					belts: {
 						buckleType: String, //('Pin Buckle', 'Frame Buckle', 'Plate Buckle', 'Snap', etc.)
@@ -973,6 +976,7 @@ const RESULTS = [
 						width: Number,
 						height: Number,
 						diameter: Number,
+						material: String, // 'Gold', 'Leather', 'Silk', ...
 					},
 				},
 				name: String,
@@ -980,10 +984,7 @@ const RESULTS = [
 				price: Number,
 				primaryImage: String,
 				secondaryImages: [String],
-				material: String, // 'Gold', 'Leather', 'Silk', ...
-				color: [String], //'blue', {color: String, hexValue: String}
 				pattern: String, // 'Solid', 'Striped', 'Floral', ...
-				size: String, // 'One Size Fits All', 'Adjustable' or { length: Number, width: Number, height: Number, diameter: Number} or [S,M,L]
 				season: String, // 'Summer', 'Winter', 'All-Season'
 				gender: String, // 'Women', 'Men', 'Unisex'
 				careInstructions: String, //'Machine wash cold, gentle cycle. Do not bleach. Tumble dry low. Cool iron if needed.',
