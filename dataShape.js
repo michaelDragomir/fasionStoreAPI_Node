@@ -264,48 +264,40 @@ const RESULTS = [
 					{
 						id: Number, //1,
 						productId: Number, //SAME AS ID OF PRODUCT
-						type: String, //jackets, coats, blazers, skirts <IS THIS NEEDED?>
-						subType: String, //['basics','denim','biker', 'fauxLeather', 'coats', 'trenchCoats', 'cropped', 'suits']<IS THIS NEEDED?>
-						rating: Number, //5
-						reviewText: String, //'Great jacket! Fits perfectly and looks stylish.',
-						reviewer: String, //'John Doe',
 						date: Number,
+						rating: Number, //5
+						reviewer: String, //'John Doe',
+						reviewText: String, //'Great jacket! Fits perfectly and looks stylish.',
 					},
 				],
 				bags: [
 					{
 						id: Number, //1,
 						productId: Number, //SAME AS ID OF PRODUCT
-						type: String, //jackets, coats, blazers, skirts <IS THIS NEEDED?>
-						subType: String, //['basics','denim','biker', 'fauxLeather', 'coats', 'trenchCoats', 'cropped', 'suits']<IS THIS NEEDED?>
-						rating: Number, //5
-						reviewText: String, //'Great jacket! Fits perfectly and looks stylish.',
-						reviewer: String, //'John Doe',
 						date: Number,
+						rating: Number, //5
+						reviewer: String, //'John Doe',
+						reviewText: String, //'Great jacket! Fits perfectly and looks stylish.',
 					},
 				],
 				shoes: [
 					{
 						id: Number, //1,
 						productId: Number, //SAME AS ID OF PRODUCT
-						type: String, //jackets, coats, blazers, skirts <IS THIS NEEDED?>
-						subType: String, //['basics','denim','biker', 'fauxLeather', 'coats', 'trenchCoats', 'cropped', 'suits']<IS THIS NEEDED?>
-						rating: Number, //5
-						reviewText: String, //'Great jacket! Fits perfectly and looks stylish.',
-						reviewer: String, //'John Doe',
 						date: Number,
+						rating: Number, //5
+						reviewer: String, //'John Doe',
+						reviewText: String, //'Great jacket! Fits perfectly and looks stylish.',
 					},
 				],
 				accessories: [
 					{
 						id: Number, //1,
 						productId: Number, //SAME AS ID OF PRODUCT
-						type: String, //jackets, coats, blazers, skirts <IS THIS NEEDED?>
-						subType: String, //['basics','denim','biker', 'fauxLeather', 'coats', 'trenchCoats', 'cropped', 'suits']<IS THIS NEEDED?>
-						rating: Number, //5
-						reviewText: String, //'Great jacket! Fits perfectly and looks stylish.',
-						reviewer: String, //'John Doe',
 						date: Number,
+						rating: Number, //5
+						reviewer: String, //'John Doe',
+						reviewText: String, //'Great jacket! Fits perfectly and looks stylish.',
 					},
 				],
 			},
@@ -368,13 +360,14 @@ const RESULTS = [
 			women: {
 				bottoms: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'],
 				tops: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL'],
-				shoes: [5, 6, 7, 8, 9, 10, 11, 12],
+				shoes: [5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 10, 11, 12],
 			},
 			men: {
 				//fix
 				bottoms: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'],
 				tops: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL'],
-				shoes: [],
+				shoes: [5, 6, 7, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 13, 14],
+				accessories: ['S', 'M', 'L', 'XL'],
 			},
 			kids: {
 				//fix
@@ -704,7 +697,88 @@ const RESULTS = [
 					},
 				],
 			},
-			men: {},
+			men: {
+				accessories: [
+					{
+						color: 'beige',
+						hexColor: '#F5F5DC',
+					},
+					{
+						color: 'black',
+						hexColor: '#000',
+					},
+					{
+						color: 'blue',
+						hexColor: '#0000FF',
+					},
+					{
+						color: 'brown',
+						hexColor: '#A52A2A',
+					},
+					{
+						color: 'green',
+						hexColor: '#008000',
+					},
+					{
+						color: 'gray',
+						hexColor: '#808080',
+					},
+					{
+						color: 'metallic',
+						hexColor: '#e5cf75',
+					},
+					{
+						color: 'white',
+						hexColor: '#FFF',
+					},
+					{
+						color: 'printed',
+						hexColor: '#FFF',
+					},
+					{
+						color: 'orange',
+						hexColor: '#FFA500',
+					},
+				],
+				shoes: [
+					{
+						color: 'beige',
+						hexColor: '#F5F5DC',
+					},
+					{
+						color: 'black',
+						hexColor: '#000',
+					},
+					{
+						color: 'blue',
+						hexColor: '#0000FF',
+					},
+					{
+						color: 'brown',
+						hexColor: '#A52A2A',
+					},
+					{
+						color: 'green',
+						hexColor: '#008000',
+					},
+					{
+						color: 'gray',
+						hexColor: '#808080',
+					},
+					{
+						color: 'printed',
+						hexColor: '#FFF',
+					},
+					{
+						color: 'red',
+						hexColor: '#FF0000',
+					},
+					{
+						color: 'white',
+						hexColor: '#FFF',
+					},
+				],
+			},
 			kids: {},
 		},
 		//=====================================================
@@ -722,7 +796,7 @@ const RESULTS = [
 				rating: Number,
 				reviewIds: [Number], // [4, 5] IDs of reviews for this skirt NOT SURE IF I NEED THIS PROPERTY.  may not need.
 				primaryImage: String,
-				secondaryImage: [String],
+				secondaryImages: [String],
 				season: String, // fall winter summer spring
 				careInstructions: String, //'Machine wash cold, gentle cycle. Do not bleach. Tumble dry low. Cool iron if needed.',
 				features: [String], //	'Adjustable drawstring hood, snap button cuffs, flap pockets, hidden zip closure.',
@@ -732,8 +806,7 @@ const RESULTS = [
 					style: [String], //["vintage", "boho", "preppy", "modern", 'classic', 'traditional', 'streetwear', 'grunge', 'casual', 'party', 'daily', 'romantic']
 					detail: String, //Pleated, Distressed,front zipper,Pockets, bedazzeled
 					fit: String, //loose fit, oversized fit, regular fit, Skinny Fit, Slim Fit, Straight Fit, Wide Leg, Bootcut fit, Flare fit, Relaxed Fit
-					color: String, //'blue',
-					hexColorValue: String, // '#000AAA',
+					color: [String], //'blue', {color: String, hexValue: String}
 					hasPattern: Boolean,
 					pattern: String, //Solid, Striped, Plaid, Floral, polka dot
 					sleeveLength: String, //(e.g., "short sleeve", "long sleeve"), sleeveless, 3/4 sleeve,
@@ -756,45 +829,40 @@ const RESULTS = [
 				availableOptions: {
 					availableSizes: [String],
 					primaryImage: String,
-					secondaryImage: [String],
-					color: String, //'blue',
-					hexColorValue: String, //'#000AAA',
+					secondaryImages: [String],
+					availableColors: [String], //'blue', {color: String, hexValue: String}
 				},
 			},
 		},
 		footwear: {
 			item: {
 				id: Number,
-				category: String, //women
+				category: String, //women, men
 				type: String, //LOAFERS,PLATFORMS,PUMPS,SNEAKERS,HEELED SHOES,FISHERMAN SANDALS, WEDGES, SANDALS, CLOGS, BOOTS, ANKLE BOOTS, SPORT SHOES, BALLET FLATS,MULES
 				name: String,
 				description: String,
 				price: Number,
-				size: [String], //may not need this...you're going to have available options when lo
 				rating: Number,
 				reviewIds: [Number], //May not need
 				primaryImage: String,
-				secondaryImage: [String],
+				secondaryImages: [String],
 				season: String, // fall winter summer spring
 				careInstructions: String, //'Machine wash cold, gentle cycle. Do not bleach. Tumble dry low. Cool iron if needed.',
 				occasion: String, //'Suitable for casual wear, outdoor activities, and everyday use.',
 				comingSoon: Boolean,
 				features: [String], //'Water-resistant fabric, UV protection.',
-				stylesDetail: {
+				styleDetail: {
 					style: [String], //['casual', "daily", 'upscale', 'professional', "classic",]
-					color: String, // 'blue',
-					hexColorValue: String, //'#000AAA',
+					color: [String], //'blue', {color: String, hexValue: String}
 					width: [String], //['Regular', 'Wide', 'Narrow'],
 					closureType: [String], //['Laces', 'Buckle', 'Slip-on'],
 					heelHeight: Number, //(inches or cm)
 					soleHeight: Number,
 					patern: String, // plain,
 					heelType: String, // hem, block, wedge, platform, high, medium, flat
-				},
-				materialsDetail: {
-					upperMaterial: String,
-					liningMaterial: String,
-					soleMaterial: String,
+					externalMaterial: String, //faux leather, leather, suede, cotton, knit,
+					liningMaterial: String, // textile, leather
+					soleMaterial: String, //'Rubber', 'TPR', etc.
 				},
 				// If properties like type, style, material have specific options, create separate tables for those and reference them using IDs. This enhances data integrity and makes your database more scalable. DO I DO THIS FOR ALL OF THEM?
 				brandInfo: {
@@ -809,9 +877,8 @@ const RESULTS = [
 				availableOptions: {
 					availableSizes: [String],
 					primaryImage: String,
-					secondaryImage: [String],
-					color: String, //'blue',
-					hexColorValue: String, //'#000AAA',
+					secondaryImages: [String],
+					availableColors: [String], //'blue', {color: String, hexValue: String}
 				},
 			},
 		},
@@ -819,7 +886,7 @@ const RESULTS = [
 			item: {
 				id: Number,
 				category: String, // women
-				type: String, // BUCKET BAG, SHOULDER BAG, PHONE BAG, CROSSBODY BAG, TOTE BAGS, BOWLING BAG, CLUTCH, HANDBAG, BRIEFCASE, mini bag
+				type: String, // BUCKET BAG, SHOULDER BAG, PHONE BAG, CROSSBODY BAG, travel bags, backpack, wallets, bags, TOTE BAGS, BOWLING BAG, CLUTCH, HANDBAG, BRIEFCASE, mini bag
 				name: String,
 				description: String,
 				rating: Number,
@@ -828,9 +895,6 @@ const RESULTS = [
 				primaryImage: String,
 				secondaryImages: [String],
 				weight: Number,
-				capacity: String, // may not need.
-				color: String,
-				hexColorValue: String, //'#000AAA'
 				pattern: String,
 				occasion: String,
 				season: Boolean,
@@ -845,12 +909,13 @@ const RESULTS = [
 					interiorPockets: Number,
 					exteriorPockes: Number,
 					type: String, // 'Brass', 'Silver', etc.
-					color: String,
+					color: [String], //'blue', {color: String, hexValue: String}
 				},
 				size: {
 					height: Number,
 					width: Number,
 					depth: Number,
+					capacity: Number,
 				},
 				brandInfo: {
 					brand: String, //'Example Brand',
@@ -865,12 +930,12 @@ const RESULTS = [
 					sizes: [String], //MAY NOT NEED
 					primaryImage: String,
 					secondaryImages: [String],
-					color: String,
-					hexColorValue: String,
+					availableColors: [String], //'blue', {color: String, hexValue: String}
 				},
 			},
 		},
 		accessories: {
+			// NEED TO FIGURE THIS OUT...
 			item: {
 				id: Number,
 				category: String, // men women
@@ -880,6 +945,7 @@ const RESULTS = [
 						type: String, // 'Necklace', 'Earrings', 'Bracelet', ...
 						gemstone: String,
 						closureType: String,
+						size: String,
 					},
 					hats: {
 						brimSize: Number, // may not use this..
@@ -902,6 +968,12 @@ const RESULTS = [
 						lensColor: String, //('Brown', 'Grey', 'Gradient', 'Mirrored', etc.)
 						lensType: String, //('Polarized', 'UV400', 'Photochromic', etc.)
 					},
+					wallets: {
+						length: Number,
+						width: Number,
+						height: Number,
+						diameter: Number,
+					},
 				},
 				name: String,
 				description: String,
@@ -909,9 +981,9 @@ const RESULTS = [
 				primaryImage: String,
 				secondaryImages: [String],
 				material: String, // 'Gold', 'Leather', 'Silk', ...
-				color: String,
+				color: [String], //'blue', {color: String, hexValue: String}
 				pattern: String, // 'Solid', 'Striped', 'Floral', ...
-				size: String, // 'One Size Fits All', 'Adjustable' or { length: Number, width: Number, diameter: Number} or [S,M,L]
+				size: String, // 'One Size Fits All', 'Adjustable' or { length: Number, width: Number, height: Number, diameter: Number} or [S,M,L]
 				season: String, // 'Summer', 'Winter', 'All-Season'
 				gender: String, // 'Women', 'Men', 'Unisex'
 				careInstructions: String, //'Machine wash cold, gentle cycle. Do not bleach. Tumble dry low. Cool iron if needed.',
@@ -932,8 +1004,7 @@ const RESULTS = [
 					materials: [String],
 					primaryImage: String,
 					secondaryImages: [String],
-					color: String,
-					hexColorValue: String,
+					availableColors: [String], //'blue', {color: String, hexValue: String}
 				},
 			},
 		},
