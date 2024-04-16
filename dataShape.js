@@ -368,6 +368,20 @@ const RESULTS = [
 				tops: ['S', 'M', 'L', 'XL', 'XXL'],
 				shoes: [5, 6, 7, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 13, 14],
 				accessories: ['S', 'M', 'L', 'XL'],
+				suits: ['36', '38', '40', '42', '44', '46', '48', '50', '52', '54'],
+				blazers: [
+					'44',
+					'46',
+					'48',
+					'50',
+					'52',
+					'54',
+					'56',
+					'S',
+					'M',
+					'L',
+					'XL',
+				],
 			},
 			kids: {
 				//fix
@@ -698,6 +712,199 @@ const RESULTS = [
 				],
 			},
 			men: {
+				outerWear: [
+					//hoodies, sweaters
+					{
+						color: 'beige',
+						hexColor: '#F5F5DC',
+					},
+					{
+						color: 'black',
+						hexColor: '#000',
+					},
+					{
+						color: 'blue',
+						hexColor: '#0000FF',
+					},
+					{
+						color: 'brown',
+						hexColor: '#A52A2A',
+					},
+					{
+						color: 'green',
+						hexColor: '#008000',
+					},
+					{
+						color: 'gray',
+						hexColor: '#808080',
+					},
+					{
+						color: 'pink',
+						hexColor: '#FFC0CB',
+					},
+					{
+						color: 'red',
+						hexColor: '#FF0000',
+					},
+					{
+						color: 'white',
+						hexColor: '#FFF',
+					},
+				],
+				suits: [
+					{
+						color: 'black',
+						hexColor: '#000',
+					},
+					{
+						color: 'blue',
+						hexColor: '#0000FF',
+					},
+					{
+						color: 'gray',
+						hexColor: '#808080',
+					},
+				],
+				pants: [
+					{
+						color: 'beige',
+						hexColor: '#F5F5DC',
+					},
+					{
+						color: 'black',
+						hexColor: '#000',
+					},
+					{
+						color: 'blue',
+						hexColor: '#0000FF',
+					},
+					{
+						color: 'brown',
+						hexColor: '#A52A2A',
+					},
+					{
+						color: 'green',
+						hexColor: '#008000',
+					},
+					{
+						color: 'gray',
+						hexColor: '#808080',
+					},
+					{
+						color: 'white',
+						hexColor: '#FFF',
+					},
+				],
+				shorts: [
+					{
+						color: 'beige',
+						hexColor: '#F5F5DC',
+					},
+					{
+						color: 'black',
+						hexColor: '#000',
+					},
+					{
+						color: 'blue',
+						hexColor: '#0000FF',
+					},
+					{
+						color: 'brown',
+						hexColor: '#A52A2A',
+					},
+					{
+						color: 'green',
+						hexColor: '#008000',
+					},
+					{
+						color: 'gray',
+						hexColor: '#808080',
+					},
+					{
+						color: 'white',
+						hexColor: '#FFF',
+					},
+				],
+				shirts: [
+					{
+						color: 'beige',
+						hexColor: '#F5F5DC',
+					},
+					{
+						color: 'black',
+						hexColor: '#000',
+					},
+					{
+						color: 'blue',
+						hexColor: '#0000FF',
+					},
+					{
+						color: 'brown',
+						hexColor: '#A52A2A',
+					},
+					{
+						color: 'green',
+						hexColor: '#008000',
+					},
+					{
+						color: 'gray',
+						hexColor: '#808080',
+					},
+					{
+						color: 'white',
+						hexColor: '#FFF',
+					},
+					{
+						color: 'pink',
+						hexColor: '#FFC0CB',
+					},
+					{
+						color: 'printed',
+						hexColor: '#FFF',
+					},
+				],
+				tShirts: [
+					{
+						color: 'beige',
+						hexColor: '#F5F5DC',
+					},
+					{
+						color: 'black',
+						hexColor: '#000',
+					},
+					{
+						color: 'blue',
+						hexColor: '#0000FF',
+					},
+					{
+						color: 'brown',
+						hexColor: '#A52A2A',
+					},
+					{
+						color: 'green',
+						hexColor: '#008000',
+					},
+					{
+						color: 'gray',
+						hexColor: '#808080',
+					},
+					{
+						color: 'red',
+						hexColor: '#FF0000',
+					},
+					{
+						color: 'white',
+						hexColor: '#FFF',
+					},
+					{
+						color: 'pink',
+						hexColor: '#FFC0CB',
+					},
+					{
+						color: 'printed',
+						hexColor: '#FFF',
+					},
+				],
 				accessories: [
 					{
 						color: 'beige',
@@ -778,6 +985,58 @@ const RESULTS = [
 						hexColor: '#FFF',
 					},
 				],
+				blazers: [
+					{
+						color: 'beige',
+						hexColor: '#F5F5DC',
+					},
+					{
+						color: 'black',
+						hexColor: '#000',
+					},
+					{
+						color: 'blue',
+						hexColor: '#0000FF',
+					},
+					{
+						color: 'brown',
+						hexColor: '#A52A2A',
+					},
+					{
+						color: 'green',
+						hexColor: '#008000',
+					},
+					{
+						color: 'gray',
+						hexColor: '#808080',
+					},
+				],
+				bags: [
+					{
+						color: 'beige',
+						hexColor: '#F5F5DC',
+					},
+					{
+						color: 'black',
+						hexColor: '#000',
+					},
+					{
+						color: 'blue',
+						hexColor: '#0000FF',
+					},
+					{
+						color: 'brown',
+						hexColor: '#A52A2A',
+					},
+					{
+						color: 'green',
+						hexColor: '#008000',
+					},
+					{
+						color: 'gray',
+						hexColor: '#808080',
+					},
+				],
 			},
 			kids: {},
 		},
@@ -787,14 +1046,14 @@ const RESULTS = [
 			item: {
 				id: Number,
 				category: String, //'women, men, kids'
-				type: String, //jackets, coats, blazers, skirts, shoes
+				type: String, //jackets, coats, blazers, skirts, shoes, outerwear
 				subType: String, //['basics','denim','biker', 'fauxLeather', 'coats', 'trenchCoats', 'cropped', 'suits']
 				name: String,
 				description: String,
 				price: Number,
-				size: [String],
+				// size: [String], //May not need
 				rating: Number,
-				reviewIds: [Number], // [4, 5] IDs of reviews for this skirt NOT SURE IF I NEED THIS PROPERTY.  may not need.
+				// reviewIds: [Number], // [4, 5] IDs of reviews for this skirt NOT SURE IF I NEED THIS PROPERTY.  may not need.
 				primaryImage: String,
 				secondaryImages: [String],
 				season: String, // fall winter summer spring
@@ -842,8 +1101,8 @@ const RESULTS = [
 				name: String,
 				description: String,
 				price: Number,
-				rating: Number,
-				reviewIds: [Number], //May not need
+				// rating: Number, // refer to rating in reviews..
+				// reviewIds: [Number], //May not need
 				primaryImage: String,
 				secondaryImages: [String],
 				season: String, // fall winter summer spring
@@ -889,13 +1148,12 @@ const RESULTS = [
 				type: String, // BUCKET BAG, SHOULDER BAG, PHONE BAG, CROSSBODY BAG, travel bags, backpack, wallets, bags, TOTE BAGS, BOWLING BAG, CLUTCH, HANDBAG, BRIEFCASE, mini bag
 				name: String,
 				description: String,
-				rating: Number,
-				reviewIds: [Number], // [4, 5] IDs of reviews for this skirt NOT SURE IF I NEED THIS PROPERTY. May remove
+				// rating: Number, // refer to rating in reviews..
+				// reviewIds: [Number], // [4, 5] IDs of reviews for this skirt NOT SURE IF I NEED THIS PROPERTY. May remove
 				price: Number,
 				primaryImage: String,
 				secondaryImages: [String],
 				weight: Number,
-				pattern: String,
 				occasion: String,
 				season: Boolean,
 				careInstructions: String,
@@ -905,6 +1163,7 @@ const RESULTS = [
 					material: String, //Letther/.
 					lining: String,
 					handleType: [String], //   ['Detachable Shoulder Strap', 'Top Handles']
+					pattern: String,
 					closureType: String, // may not need
 					interiorPockets: Number,
 					exteriorPockes: Number,
@@ -935,7 +1194,6 @@ const RESULTS = [
 			},
 		},
 		accessories: {
-			// NEED TO FIGURE THIS OUT...
 			item: {
 				id: Number,
 				category: String, // men women
@@ -984,6 +1242,7 @@ const RESULTS = [
 				price: Number,
 				primaryImage: String,
 				secondaryImages: [String],
+				// rating: Number, // refer to rating in reviews..
 				pattern: String, // 'Solid', 'Striped', 'Floral', ...
 				season: String, // 'Summer', 'Winter', 'All-Season'
 				gender: String, // 'Women', 'Men', 'Unisex'
@@ -991,6 +1250,7 @@ const RESULTS = [
 				occasion: String, //'Suitable for casual wear, outdoor activities, and everyday use.','Everyday', 'Formal', ...
 				comingSoon: Boolean,
 				features: [String], //'Water-resistant fabric, UV protection.','Hypoallergenic', 'Water-Resistant', ...
+				// reviewIds: [Number], // [4, 5] IDs of reviews for this skirt NOT SURE IF I NEED THIS PROPERTY. May remove
 				brandInfo: {
 					brand: String, //'Example Brand',
 					countryOfOrigin: String, //'United States',
