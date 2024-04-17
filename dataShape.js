@@ -363,10 +363,25 @@ const RESULTS = [
 				shoes: [5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 10, 11, 12],
 			},
 			men: {
-				//fix
+				// connect this to the available sizes in your items.
 				bottoms: ['36', '38', '40', '44', '46', 'S', 'M', 'L', 'XL'],
 				tops: ['S', 'M', 'L', 'XL', 'XXL'],
-				shoes: [5, 6, 7, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 13, 14],
+				shoes: [
+					'5',
+					'6',
+					'7',
+					'8',
+					'8.5',
+					'9',
+					'9.5',
+					'10',
+					'10.5',
+					'11',
+					'11.5',
+					'12',
+					'13',
+					'14',
+				],
 				accessories: ['S', 'M', 'L', 'XL'],
 				suits: ['36', '38', '40', '42', '44', '46', '48', '50', '52', '54'],
 				blazers: [
@@ -385,9 +400,29 @@ const RESULTS = [
 			},
 			kids: {
 				//fix
-				bottoms: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'],
-				tops: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL'],
-				shoes: [],
+				//'[13-14 years (65 inches), 11-12 years (59 inches), 10 years (55 inches), 9 years (52 inches)]'
+				bottoms: [
+					'13-14 years (65 inches)',
+					'11-12 years (59 inches)',
+					'10 years (55 inches)',
+					'9 years (52 inches)',
+				],
+				tops: [
+					'13-14 years (65 inches)',
+					'11-12 years (59 inches)',
+					'10 years (55 inches)',
+					'9 years (52 inches)',
+				],
+				shoes: [
+					'11 (7 inches)',
+					'12 (7.2 inches)',
+					'12.5 (7.4 inches)',
+					'13.5 (7.7 inches)',
+					'1 (8 inches)',
+					'2 (8.2 inches)',
+				],
+
+				accessories: [],
 			},
 		},
 		//=====================================================
@@ -1044,15 +1079,13 @@ const RESULTS = [
 		// If properties like type, style, material have specific options, create separate tables for those and reference them using IDs. This enhances data integrity and makes your database more scalable. DO I DO THIS FOR ALL OF THEM? - NORMALIZATION.
 		clothing: {
 			item: {
-				id: Number,
-				category: String, //'women, men, kids'
+				id: Number, //this will be the same as the reviews.[category].productId.
+				category: String, //'women, men, boys, girls'
 				type: String, //jackets, coats, blazers, skirts, shoes, outerwear
 				subType: String, //['basics','denim','biker', 'fauxLeather', 'coats', 'trenchCoats', 'cropped', 'suits']
 				name: String,
 				description: String,
 				price: Number,
-				// size: [String], //May not need
-				rating: Number,
 				// reviewIds: [Number], // [4, 5] IDs of reviews for this skirt NOT SURE IF I NEED THIS PROPERTY.  may not need.
 				primaryImage: String,
 				secondaryImages: [String],
@@ -1095,13 +1128,12 @@ const RESULTS = [
 		},
 		footwear: {
 			item: {
-				id: Number,
-				category: String, //women, men
+				id: Number, //this will be the same as the reviews.[category].productId.
+				category: String, //women, men, boys, girls
 				type: String, //LOAFERS,PLATFORMS,PUMPS,SNEAKERS,HEELED SHOES,FISHERMAN SANDALS, WEDGES, SANDALS, CLOGS, BOOTS, ANKLE BOOTS, SPORT SHOES, BALLET FLATS,MULES
 				name: String,
 				description: String,
 				price: Number,
-				// rating: Number, // refer to rating in reviews..
 				// reviewIds: [Number], //May not need
 				primaryImage: String,
 				secondaryImages: [String],
@@ -1143,12 +1175,11 @@ const RESULTS = [
 		},
 		bags: {
 			item: {
-				id: Number,
-				category: String, // women
+				id: Number, //this will be the same as the reviews.[category].productId.
+				category: String, //women, men, boys, girls
 				type: String, // BUCKET BAG, SHOULDER BAG, PHONE BAG, CROSSBODY BAG, travel bags, backpack, wallets, bags, TOTE BAGS, BOWLING BAG, CLUTCH, HANDBAG, BRIEFCASE, mini bag
 				name: String,
 				description: String,
-				// rating: Number, // refer to rating in reviews..
 				// reviewIds: [Number], // [4, 5] IDs of reviews for this skirt NOT SURE IF I NEED THIS PROPERTY. May remove
 				price: Number,
 				primaryImage: String,
@@ -1195,8 +1226,8 @@ const RESULTS = [
 		},
 		accessories: {
 			item: {
-				id: Number,
-				category: String, // men women
+				id: Number, //this will be the same as the reviews.[category].productId.
+				category: String, //women, men, boys, girls
 				type: String, // 'Jewelry', 'Hats', 'Scarves', 'Belts', 'Sunglasses', ...
 				subtype: String, // 'Necklace', 'Earrings', 'Bracelet', ...
 				typeProperties: {
@@ -1242,7 +1273,6 @@ const RESULTS = [
 				price: Number,
 				primaryImage: String,
 				secondaryImages: [String],
-				// rating: Number, // refer to rating in reviews..
 				pattern: String, // 'Solid', 'Striped', 'Floral', ...
 				season: String, // 'Summer', 'Winter', 'All-Season'
 				gender: String, // 'Women', 'Men', 'Unisex'
