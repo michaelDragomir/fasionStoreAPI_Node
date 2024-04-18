@@ -422,7 +422,12 @@ const RESULTS = [
 					'2 (8.2 inches)',
 				],
 
-				accessories: [],
+				accessories: [
+					'13-14 years (65 inches)',
+					'11-12 years (59 inches)',
+					'10 years (55 inches)',
+					'9 years (52 inches)',
+				],
 			},
 		},
 		//=====================================================
@@ -1088,7 +1093,8 @@ const RESULTS = [
 				price: Number,
 				// reviewIds: [Number], // [4, 5] IDs of reviews for this skirt NOT SURE IF I NEED THIS PROPERTY.  may not need.
 				primaryImage: String,
-				secondaryImages: [String],
+				size: String,
+				secondaryImage: [String],
 				season: String, // fall winter summer spring
 				careInstructions: String, //'Machine wash cold, gentle cycle. Do not bleach. Tumble dry low. Cool iron if needed.',
 				features: [String], //	'Adjustable drawstring hood, snap button cuffs, flap pockets, hidden zip closure.',
@@ -1119,10 +1125,10 @@ const RESULTS = [
 					quantity: Number,
 				},
 				availableOptions: {
-					availableSizes: [String],
+					size: [String],
 					primaryImage: String,
-					secondaryImages: [String],
-					availableColors: [String], //'blue', {color: String, hexValue: String}
+					secondaryImage: [String],
+					color: [String], //'blue', {color: String, hexValue: String}
 				},
 			},
 		},
@@ -1137,6 +1143,7 @@ const RESULTS = [
 				// reviewIds: [Number], //May not need
 				primaryImage: String,
 				secondaryImages: [String],
+				size: String,
 				season: String, // fall winter summer spring
 				careInstructions: String, //'Machine wash cold, gentle cycle. Do not bleach. Tumble dry low. Cool iron if needed.',
 				occasion: String, //'Suitable for casual wear, outdoor activities, and everyday use.',
@@ -1166,10 +1173,10 @@ const RESULTS = [
 					quantity: Number,
 				},
 				availableOptions: {
-					availableSizes: [String],
+					size: [String],
 					primaryImage: String,
-					secondaryImages: [String],
-					availableColors: [String], //'blue', {color: String, hexValue: String}
+					secondaryImage: [String],
+					color: [String], //'blue', {color: String, hexValue: String}
 				},
 			},
 		},
@@ -1184,6 +1191,7 @@ const RESULTS = [
 				price: Number,
 				primaryImage: String,
 				secondaryImages: [String],
+				size: String,
 				weight: Number,
 				occasion: String,
 				season: Boolean,
@@ -1217,10 +1225,10 @@ const RESULTS = [
 					quantity: Number,
 				},
 				availableOptions: {
-					sizes: [String], //MAY NOT NEED
+					size: [String], //MAY NOT NEED
 					primaryImage: String,
-					secondaryImages: [String],
-					availableColors: [String], //'blue', {color: String, hexValue: String}
+					secondaryImage: [String],
+					color: [String], //'blue', {color: String, hexValue: String}
 				},
 			},
 		},
@@ -1228,7 +1236,7 @@ const RESULTS = [
 			item: {
 				id: Number, //this will be the same as the reviews.[category].productId.
 				category: String, //women, men, boys, girls
-				type: String, // 'Jewelry', 'Hats', 'Scarves', 'Belts', 'Sunglasses', ...
+				type: String, // 'Jewelry', 'Hats', 'Scarves', 'Belts', 'Sunglasses', 'hair accessories'...
 				subtype: String, // 'Necklace', 'Earrings', 'Bracelet', ...
 				typeProperties: {
 					jewelry: {
@@ -1240,7 +1248,7 @@ const RESULTS = [
 					hats: {
 						brimSize: Number, // may not use this..
 						crownHeight: Number, // may not use this.
-						size: Number,
+						size: Number, //not needed
 						material: String, // 'Gold', 'Leather', 'Silk', ...
 					},
 					scarves: {
@@ -1273,6 +1281,7 @@ const RESULTS = [
 				price: Number,
 				primaryImage: String,
 				secondaryImages: [String],
+				size: String,
 				pattern: String, // 'Solid', 'Striped', 'Floral', ...
 				season: String, // 'Summer', 'Winter', 'All-Season'
 				gender: String, // 'Women', 'Men', 'Unisex'
@@ -1291,11 +1300,11 @@ const RESULTS = [
 					quantity: Number,
 				},
 				availableOptions: {
-					sizes: [String], //MAY NOT NEED
-					materials: [String],
+					size: [String], //MAY NOT NEED
+					material: [String],
 					primaryImage: String,
-					secondaryImages: [String],
-					availableColors: [String], //'blue', {color: String, hexValue: String}
+					secondaryImage: [String],
+					color: [String], //'blue', {color: String, hexValue: String}
 				},
 			},
 		},
