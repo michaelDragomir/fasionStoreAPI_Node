@@ -399,8 +399,6 @@ const RESULTS = [
 				],
 			},
 			kids: {
-				//fix
-				//'[13-14 years (65 inches), 11-12 years (59 inches), 10 years (55 inches), 9 years (52 inches)]'
 				bottoms: [
 					'13-14 years (65 inches)',
 					'11-12 years (59 inches)',
@@ -1093,18 +1091,17 @@ const RESULTS = [
 				price: Number,
 				// reviewIds: [Number], // [4, 5] IDs of reviews for this skirt NOT SURE IF I NEED THIS PROPERTY.  may not need.
 				primaryImage: String,
-				size: String,
 				secondaryImage: [String],
+				size: String,
+				color: [String], //'blue', {color: String, hexValue: String}
 				season: String, // fall winter summer spring
 				careInstructions: String, //'Machine wash cold, gentle cycle. Do not bleach. Tumble dry low. Cool iron if needed.',
-				features: [String], //	'Adjustable drawstring hood, snap button cuffs, flap pockets, hidden zip closure.',
 				comingSoon: Boolean,
 				occasion: String, // 'Suitable for casual wear, outdoor activities, and everyday use.',
 				styleDetail: {
 					style: [String], //["vintage", "boho", "preppy", "modern", 'classic', 'traditional', 'streetwear', 'grunge', 'casual', 'party', 'daily', 'romantic']
-					detail: String, //Pleated, Distressed,front zipper,Pockets, bedazzeled
+					features: [String], //	'Adjustable drawstring hood, snap button cuffs, flap pockets, hidden zip closure.',
 					fit: String, //loose fit, oversized fit, regular fit, Skinny Fit, Slim Fit, Straight Fit, Wide Leg, Bootcut fit, Flare fit, Relaxed Fit
-					color: [String], //'blue', {color: String, hexValue: String}
 					hasPattern: Boolean,
 					pattern: String, //Solid, Striped, Plaid, Floral, polka dot
 					sleeveLength: String, //(e.g., "short sleeve", "long sleeve"), sleeveless, 3/4 sleeve,
@@ -1113,7 +1110,6 @@ const RESULTS = [
 					length: String, //length: (for pants/skirts – "ankle", "full length"), Full length, Cropped, Ankle length, Capri
 					fabric: String, //'100% Polyester',Denim, Silk, Cotton, Linen, Polyester, Leather (or faux leather), Stretch blends, fleece, wool, cashmere, alpaca,
 					closure: String, //'Front hidden zip and snap button closure.',
-					designDetails: String, // 'Elastic drawstring hood, side elastic hem, snap button cuffs.',
 				},
 				brandInfo: {
 					brand: String, //'Example Brand',
@@ -1126,9 +1122,9 @@ const RESULTS = [
 				},
 				availableOptions: {
 					size: [String],
+					color: [String], //'blue', {color: String, hexValue: String}
 					primaryImage: String,
 					secondaryImage: [String],
-					color: [String], //'blue', {color: String, hexValue: String}
 				},
 			},
 		},
@@ -1142,16 +1138,16 @@ const RESULTS = [
 				price: Number,
 				// reviewIds: [Number], //May not need
 				primaryImage: String,
-				secondaryImages: [String],
+				secondaryImage: [String],
 				size: String,
+				color: [String], //'blue', {color: String, hexValue: String}
 				season: String, // fall winter summer spring
 				careInstructions: String, //'Machine wash cold, gentle cycle. Do not bleach. Tumble dry low. Cool iron if needed.',
 				occasion: String, //'Suitable for casual wear, outdoor activities, and everyday use.',
 				comingSoon: Boolean,
-				features: [String], //'Water-resistant fabric, UV protection.',
 				styleDetail: {
 					style: [String], //['casual', "daily", 'upscale', 'professional', "classic",]
-					color: [String], //'blue', {color: String, hexValue: String}
+					features: [String], //'Water-resistant fabric, UV protection.',
 					width: [String], //['Regular', 'Wide', 'Narrow'],
 					closureType: [String], //['Laces', 'Buckle', 'Slip-on'],
 					heelHeight: Number, //(inches or cm)
@@ -1174,9 +1170,9 @@ const RESULTS = [
 				},
 				availableOptions: {
 					size: [String],
+					color: [String], //'blue', {color: String, hexValue: String}
 					primaryImage: String,
 					secondaryImage: [String],
-					color: [String], //'blue', {color: String, hexValue: String}
 				},
 			},
 		},
@@ -1192,7 +1188,7 @@ const RESULTS = [
 				primaryImage: String,
 				secondaryImages: [String],
 				size: String,
-				weight: Number,
+				color: [String], //'blue', {color: String, hexValue: String}
 				occasion: String,
 				season: Boolean,
 				careInstructions: String,
@@ -1202,14 +1198,14 @@ const RESULTS = [
 					material: String, //Letther/.
 					lining: String,
 					handleType: [String], //   ['Detachable Shoulder Strap', 'Top Handles']
+					weight: Number,
 					pattern: String,
 					closureType: String, // may not need
 					interiorPockets: Number,
 					exteriorPockes: Number,
 					type: String, // 'Brass', 'Silver', etc.
-					color: [String], //'blue', {color: String, hexValue: String}
 				},
-				size: {
+				bagSize: {
 					height: Number,
 					width: Number,
 					depth: Number,
@@ -1226,9 +1222,9 @@ const RESULTS = [
 				},
 				availableOptions: {
 					size: [String], //MAY NOT NEED
+					color: [String], //'blue', {color: String, hexValue: String}
 					primaryImage: String,
 					secondaryImage: [String],
-					color: [String], //'blue', {color: String, hexValue: String}
 				},
 			},
 		},
@@ -1282,6 +1278,7 @@ const RESULTS = [
 				primaryImage: String,
 				secondaryImages: [String],
 				size: String,
+				color: [String], //'blue', {color: String, hexValue: String}
 				pattern: String, // 'Solid', 'Striped', 'Floral', ...
 				season: String, // 'Summer', 'Winter', 'All-Season'
 				gender: String, // 'Women', 'Men', 'Unisex'
@@ -1301,12 +1298,14 @@ const RESULTS = [
 				},
 				availableOptions: {
 					size: [String], //MAY NOT NEED
+					color: [String], //'blue', {color: String, hexValue: String}
 					material: [String],
 					primaryImage: String,
 					secondaryImage: [String],
-					color: [String], //'blue', {color: String, hexValue: String}
 				},
 			},
 		},
 	},
 ];
+
+// essential obj:
