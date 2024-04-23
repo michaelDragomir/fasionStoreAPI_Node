@@ -1079,17 +1079,19 @@ const RESULTS = [
 			kids: {},
 		},
 		//=====================================================
-		// If properties like type, style, material have specific options, create separate tables for those and reference them using IDs. This enhances data integrity and makes your database more scalable. DO I DO THIS FOR ALL OF THEM? - NORMALIZATION.
+		// If properties like type, style, material have specific options, create separate tables for those and reference them using IDs. This enhances data integrity and makes your database more scalable.
 		clothing: {
+			// FULL OBJECT.  limit default to 20 items?
 			item: {
+				keywords: [String], // searchable keywords.  ['jeans', 'skinny', 'dark wash', 'high-waisted', 'stretch denim'].  include matches against category, type, subtype, color, season, occasion, style, fit, pattern, fabric, PLUS additional words.
 				id: Number, //this will be the same as the reviews.[category].productId.
 				category: String, //'women, men, boys, girls'
-				type: String, //jackets, coats, blazers, skirts, shoes, outerwear
+				type: String, //jackets, coats, blazers, skirts, shoes, outerwear, jeans
 				subType: String, //['basics','denim','biker', 'fauxLeather', 'coats', 'trenchCoats', 'cropped', 'suits']
 				name: String,
 				description: String,
 				price: Number,
-				// reviewIds: [Number], // [4, 5] IDs of reviews for this skirt NOT SURE IF I NEED THIS PROPERTY.  may not need.
+				// reviewIds: [Number], // [4, 5] IDs of reviews for this skirt NOT SURE IF I NEED THIS PROPERTY.  Product ID will connect to that specific review.
 				primaryImage: String,
 				secondaryImage: [String],
 				size: String,
@@ -1100,7 +1102,7 @@ const RESULTS = [
 				occasion: String, // 'Suitable for casual wear, outdoor activities, and everyday use.',
 				styleDetail: {
 					style: [String], //["vintage", "boho", "preppy", "modern", 'classic', 'traditional', 'streetwear', 'grunge', 'casual', 'party', 'daily', 'romantic']
-					features: [String], //	'Adjustable drawstring hood, snap button cuffs, flap pockets, hidden zip closure.',
+					feature: [String], //	'Adjustable drawstring hood, snap button cuffs, flap pockets, hidden zip closure.',
 					fit: String, //loose fit, oversized fit, regular fit, Skinny Fit, Slim Fit, Straight Fit, Wide Leg, Bootcut fit, Flare fit, Relaxed Fit
 					hasPattern: Boolean,
 					pattern: String, //Solid, Striped, Plaid, Floral, polka dot
@@ -1110,6 +1112,12 @@ const RESULTS = [
 					length: String, //length: (for pants/skirts – "ankle", "full length"), Full length, Cropped, Ankle length, Capri
 					fabric: String, //'100% Polyester',Denim, Silk, Cotton, Linen, Polyester, Leather (or faux leather), Stretch blends, fleece, wool, cashmere, alpaca,
 					closure: String, //'Front hidden zip and snap button closure.',
+				},
+				measurements: {
+					chest: Number,
+					waist: Number,
+					hips: Number,
+					inseam: Number,
 				},
 				brandInfo: {
 					brand: String, //'Example Brand',
@@ -1147,7 +1155,7 @@ const RESULTS = [
 				comingSoon: Boolean,
 				styleDetail: {
 					style: [String], //['casual', "daily", 'upscale', 'professional', "classic",]
-					features: [String], //'Water-resistant fabric, UV protection.',
+					feature: [String], //'Water-resistant fabric, UV protection.',
 					width: [String], //['Regular', 'Wide', 'Narrow'],
 					closureType: [String], //['Laces', 'Buckle', 'Slip-on'],
 					heelHeight: Number, //(inches or cm)
@@ -1186,15 +1194,15 @@ const RESULTS = [
 				// reviewIds: [Number], // [4, 5] IDs of reviews for this skirt NOT SURE IF I NEED THIS PROPERTY. May remove
 				price: Number,
 				primaryImage: String,
-				secondaryImages: [String],
+				secondaryImage: [String],
 				size: String,
 				color: [String], //'blue', {color: String, hexValue: String}
 				occasion: String,
 				season: Boolean,
 				careInstructions: String,
 				comingSoon: Boolean,
-				features: [String], //'Water-resistant fabric, UV protection.',
 				styleDetail: {
+					feature: [String], //'Water-resistant fabric, UV protection.',
 					material: String, //Letther/.
 					lining: String,
 					handleType: [String], //   ['Detachable Shoulder Strap', 'Top Handles']
@@ -1276,7 +1284,7 @@ const RESULTS = [
 				description: String,
 				price: Number,
 				primaryImage: String,
-				secondaryImages: [String],
+				secondaryImage: [String],
 				size: String,
 				color: [String], //'blue', {color: String, hexValue: String}
 				pattern: String, // 'Solid', 'Striped', 'Floral', ...
@@ -1285,7 +1293,7 @@ const RESULTS = [
 				careInstructions: String, //'Machine wash cold, gentle cycle. Do not bleach. Tumble dry low. Cool iron if needed.',
 				occasion: String, //'Suitable for casual wear, outdoor activities, and everyday use.','Everyday', 'Formal', ...
 				comingSoon: Boolean,
-				features: [String], //'Water-resistant fabric, UV protection.','Hypoallergenic', 'Water-Resistant', ...
+				feature: [String], //'Water-resistant fabric, UV protection.','Hypoallergenic', 'Water-Resistant', ...
 				// reviewIds: [Number], // [4, 5] IDs of reviews for this skirt NOT SURE IF I NEED THIS PROPERTY. May remove
 				brandInfo: {
 					brand: String, //'Example Brand',
@@ -1307,5 +1315,28 @@ const RESULTS = [
 		},
 	},
 ];
+//
+// TODO:
+// 1. create essential objects for all.
+// CLOTHING, SHOES, BAGS, ACCESSORIES(MAY NEED MORE INFO)
+// id: Number,
+// category: String,
+// type: String,
+// subType: String,
+// name: String,
+// description: String,
+// price: Number,
+// primaryImage: String,
+// secondaryImage: [String],
+// size: String,
+// color: [String],
+// 	availableOptions: { MAY NOT NEED THIS.
+// 	size: [String],
+// 	color: [String], //'blue', {color: String, hexValue: String}
+// 	primaryImage: String,
+// 	secondaryImage: [String],
+// },
 
-// essential obj:
+// 2.  Think about the endpoints; all, essentials, id. reviews, colors, sizes last
+// 3.  normalize everything. what are the relationships?
+// connect everything through product ID: reviews, full objects, essential objects.
