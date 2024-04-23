@@ -1084,7 +1084,7 @@ const RESULTS = [
 			// FULL OBJECT.  limit default to 20 items?
 			item: {
 				keywords: [String], // searchable keywords.  ['jeans', 'skinny', 'dark wash', 'high-waisted', 'stretch denim'].  include matches against category, type, subtype, color, season, occasion, style, fit, pattern, fabric, PLUS additional words.
-				id: Number, //this will be the same as the reviews.[category].productId.
+				id: Number, //this will be the same as the reviews.<category>.productId.
 				category: String, //'women, men, boys, girls'
 				type: String, //jackets, coats, blazers, skirts, shoes, outerwear, jeans
 				subType: String, //['basics','denim','biker', 'fauxLeather', 'coats', 'trenchCoats', 'cropped', 'suits']
@@ -1138,6 +1138,7 @@ const RESULTS = [
 		},
 		footwear: {
 			item: {
+				keywords: [String], // searchable keywords.  ['jeans', 'skinny', 'dark wash', 'high-waisted', 'stretch denim'].  include matches against category, type, subtype, color, season, occasion, style, fit, pattern, fabric, PLUS additional words.
 				id: Number, //this will be the same as the reviews.[category].productId.
 				category: String, //women, men, boys, girls
 				type: String, //LOAFERS,PLATFORMS,PUMPS,SNEAKERS,HEELED SHOES,FISHERMAN SANDALS, WEDGES, SANDALS, CLOGS, BOOTS, ANKLE BOOTS, SPORT SHOES, BALLET FLATS,MULES
@@ -1186,6 +1187,7 @@ const RESULTS = [
 		},
 		bags: {
 			item: {
+				keywords: [String], // searchable keywords.  ['jeans', 'skinny', 'dark wash', 'high-waisted', 'stretch denim'].  include matches against category, type, subtype, color, season, occasion, style, fit, pattern, fabric, PLUS additional words.
 				id: Number, //this will be the same as the reviews.[category].productId.
 				category: String, //women, men, boys, girls
 				type: String, // BUCKET BAG, SHOULDER BAG, PHONE BAG, CROSSBODY BAG, travel bags, backpack, wallets, bags, TOTE BAGS, BOWLING BAG, CLUTCH, HANDBAG, BRIEFCASE, mini bag
@@ -1238,6 +1240,7 @@ const RESULTS = [
 		},
 		accessories: {
 			item: {
+				keywords: [String], // searchable keywords.  ['jeans', 'skinny', 'dark wash', 'high-waisted', 'stretch denim'].  include matches against category, type, subtype, color, season, occasion, style, fit, pattern, fabric, PLUS additional words.
 				id: Number, //this will be the same as the reviews.[category].productId.
 				category: String, //women, men, boys, girls
 				type: String, // 'Jewelry', 'Hats', 'Scarves', 'Belts', 'Sunglasses', 'hair accessories'...
