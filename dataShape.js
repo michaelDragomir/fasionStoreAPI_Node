@@ -1,5 +1,40 @@
+// NOTES:
+
+//1. Search Optimization.  Added Keywords properties.
+// 2. API design:
+
+// sorting
+// related/recommended
+// category, type, subtype, color, season, occasion, style, fit, pattern, fabric.
+// https://www.zara.com/us/en/search?searchTerm=summer%20dress&section=WOMAN
+
+// query params:
+
+// category
+// type
+// search
+// limit
+// offset
+// sort
+
+// GET ALL:// fashionstoreapi.com/api/v1/products/
+// offset
+// sort=desc
+// limit
+
+// GET ONE:
+// fashionstoreapi.com/api/v1/products/{productId}
+
+// SEARCH:
+// fashionstoreapi.com/api/v1/products/search?q=<search_term>&category=""&type=''&
+
+// mongo aggregater. look up methods that mongo db provides. which keys to look for.  propteries on your object.
+
+// 3. set up server...ec2..bucket ect
+
 const RESULTS = [
-	//Search Optimization: Think about the fields users might search for (e.g., brand, features, occasion) and ensure the object is designed to support those searches.
+	// MAY HAVE TO PUT THE SIZES, REVIEWS, COLORS IN A DIFFERENT ARRAY.
+	//
 	{
 		stateSalesTax: [
 			{
@@ -1082,7 +1117,15 @@ const RESULTS = [
 		// If properties like type, style, material have specific options, create separate tables for those and reference them using IDs. This enhances data integrity and makes your database more scalable.
 		clothing: {
 			// FULL OBJECT.  limit default to 20 items?
-			item: {
+			// define users requirements...query title, desctiptions,
+			// design enpoint that takes certain parameters then use query to apply specific filter to Dataset
+			product: {
+				// fashionstoreapi.com/api/v1/products/essential/search?query=<search_term>&category='women'&type='coats'&
+				// create a folder reate products folder..cateogorize in men, women, kids...
+				// in endpoints
+				// have query params to sort them..how do I return results..do queries based on data you have..
+				// set up analytics..
+
 				keywords: [String], // searchable keywords.  ['jeans', 'skinny', 'dark wash', 'high-waisted', 'stretch denim'].  include matches against category, type, subtype, color, season, occasion, style, fit, pattern, fabric, PLUS additional words.
 				id: Number, //this will be the same as the reviews.<category>.productId.
 				category: String, //'women, men, boys, girls'
@@ -1091,7 +1134,6 @@ const RESULTS = [
 				name: String,
 				description: String,
 				price: Number,
-				// reviewIds: [Number], // [4, 5] IDs of reviews for this skirt NOT SURE IF I NEED THIS PROPERTY.  Product ID will connect to that specific review.
 				primaryImage: String,
 				secondaryImage: [String],
 				size: String,
@@ -1137,7 +1179,7 @@ const RESULTS = [
 			},
 		},
 		footwear: {
-			item: {
+			product: {
 				keywords: [String], // searchable keywords.  ['jeans', 'skinny', 'dark wash', 'high-waisted', 'stretch denim'].  include matches against category, type, subtype, color, season, occasion, style, fit, pattern, fabric, PLUS additional words.
 				id: Number, //this will be the same as the reviews.[category].productId.
 				category: String, //women, men, boys, girls
@@ -1145,7 +1187,6 @@ const RESULTS = [
 				name: String,
 				description: String,
 				price: Number,
-				// reviewIds: [Number], //May not need
 				primaryImage: String,
 				secondaryImage: [String],
 				size: String,
@@ -1186,14 +1227,13 @@ const RESULTS = [
 			},
 		},
 		bags: {
-			item: {
+			product: {
 				keywords: [String], // searchable keywords.  ['jeans', 'skinny', 'dark wash', 'high-waisted', 'stretch denim'].  include matches against category, type, subtype, color, season, occasion, style, fit, pattern, fabric, PLUS additional words.
 				id: Number, //this will be the same as the reviews.[category].productId.
 				category: String, //women, men, boys, girls
 				type: String, // BUCKET BAG, SHOULDER BAG, PHONE BAG, CROSSBODY BAG, travel bags, backpack, wallets, bags, TOTE BAGS, BOWLING BAG, CLUTCH, HANDBAG, BRIEFCASE, mini bag
 				name: String,
 				description: String,
-				// reviewIds: [Number], // [4, 5] IDs of reviews for this skirt NOT SURE IF I NEED THIS PROPERTY. May remove
 				price: Number,
 				primaryImage: String,
 				secondaryImage: [String],
@@ -1239,7 +1279,7 @@ const RESULTS = [
 			},
 		},
 		accessories: {
-			item: {
+			product: {
 				keywords: [String], // searchable keywords.  ['jeans', 'skinny', 'dark wash', 'high-waisted', 'stretch denim'].  include matches against category, type, subtype, color, season, occasion, style, fit, pattern, fabric, PLUS additional words.
 				id: Number, //this will be the same as the reviews.[category].productId.
 				category: String, //women, men, boys, girls
@@ -1318,28 +1358,26 @@ const RESULTS = [
 		},
 	},
 ];
-//
-// TODO:
-// 1. create essential objects for all.
-// CLOTHING, SHOES, BAGS, ACCESSORIES(MAY NEED MORE INFO)
-// id: Number,
-// category: String,
-// type: String,
-// subType: String,
-// name: String,
-// description: String,
-// price: Number,
-// primaryImage: String,
-// secondaryImage: [String],
-// size: String,
-// color: [String],
-// 	availableOptions: { MAY NOT NEED THIS.
-// 	size: [String],
-// 	color: [String], //'blue', {color: String, hexValue: String}
-// 	primaryImage: String,
-// 	secondaryImage: [String],
-// },
-
-// 2.  Think about the endpoints; all, essentials, id. reviews, colors, sizes last
-// 3.  normalize everything. what are the relationships?
-// connect everything through product ID: reviews, full objects, essential objects.
+// create object for every endpoint.
+// create another essential object for your details page.
+///products/details
+//products/essentials
+const essential = {
+	id: Number,
+	category: String,
+	type: String,
+	subType: String,
+	name: String,
+	description: String,
+	price: Number,
+	primaryImage: String,
+	secondaryImage: [String],
+	size: String,
+	color: [String],
+	availableOptions: {
+		size: [String],
+		color: [String],
+		primaryImage: String,
+		secondaryImage: [String],
+	},
+};

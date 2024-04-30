@@ -1,0 +1,135 @@
+{
+	"items": [
+		{
+			"keywords": [
+				"women's mesh derby sneakers",
+				"black summer mesh sneakers",
+				"women's breathable travel sneakers",
+				"athleisure sneakers",
+				"casual athletic sneakers",
+				"slip-on style sneakers",
+				"lace-up mesh sneakers",
+				"back pull tab sneakers",
+				"rubber sole sneakers",
+				"athletic sneakers"
+			],
+			"id": 6001,
+			"category": "women",
+			"type": "sneakers",
+			"name": "Mesh Derby Sneakers",
+			"description": "Slip into ultimate comfort with these airy mesh-style sneakers. The breathable mesh upper allows your feet to breathe, keeping them cool and dry even during intense workouts or hot summer days. The lightweight construction and cushioned footbed provide step-in comfort that lasts all day long.",
+			"price": 49.95,
+			"primaryImage": "./images/meshDerbySneakersPrimary.jpeg",
+			"secondaryImage": [
+				"./images/meshDerbySneakersAlt1.jpeg",
+				"./images/meshDerbySneakersAlt2.jpeg",
+				"./images/meshDerbySneakersAlt3.jpeg",
+				"./images/meshDerbySneakersAlt4.jpeg",
+				"./images/meshDerbySneakersAlt5.jpeg"
+			],
+			"color": "black",
+			"season": ["spring", "summer"],
+			"careInstructions": [
+				"Do not wash",
+				"Do not submerge in water",
+				"Do not use bleach / whitener",
+				"Clean with a dry cotton cloth.",
+				"Do not dry clean",
+				"Do not tumble dry",
+				"Suede/Nubuck/Split leather. May be protected with treatment sprays or dust repellents (mop water repellent)."
+			],
+			"occasion": "Suitable for casual everyday wear. Great for traveling. Perfect for warm weather",
+			"comingSoon": false,
+			"styleDetail": {
+				"style": ["casual", "athleisure", "summer style"],
+				"feature": "Back pull tab",
+				"width": ["Regular"],
+				"closureType": "Lace-up closure",
+				"heelHeight": null,
+				"soleHeight": 0.4,
+				"patern": "solid",
+				"heelType": null,
+				"externalMaterial": ["93% polyester", "7% elastane"],
+				"liningMaterial": ["74% cotton", "21% polyester", "5% elastane"],
+				"soleMaterial": "100% rubber"
+			},
+			"brandInfo": {
+				"brand": "Fuse",
+				"countryOfOrigin": "United States",
+				"about": "Where performance meets street-ready style. Our mesh-style sneakers are engineered with breathable, lightweight technology and cutting-edge designs.  Whether you're crushing your workout or dominating the urban landscape, Fuse empowers you to move without limits."
+			},
+			"availability": {
+				"inStock": true,
+				"quantity": 15
+			},
+			"availableOptions": {
+				"size": ["5", "6", "6.5", "7.5", "8", "9"],
+				"color": null,
+				"primaryImage": null,
+				"secondaryImage": null
+			}
+		},
+		{
+			"keywords": [
+				"women's sneakers",
+				"men's sneakers",
+				"lace-up sneakers",
+				"casual sneakers",
+				"athletic sneakers",
+				"everyday sneakers",
+				"comfortable sneakers"
+			],
+			"id": 6002,
+			"category": "women",
+			"type": "sneakers",
+			"name": "Everyday Lace-Up Casual Sneakers",
+			"description": "Comfortable, versatile, and perfect for everyday wear, these lace-up sneakers combine style and function for an effortless look.",
+			"price": 59.95,
+			"primaryImage": "./images/laceupCasualSneakersPrimary.jpeg",
+			"secondaryImage": [
+				"./images/laceupCasualSneakersAlt1.jpeg",
+				"./images/laceupCasualSneakersAlt2.jpeg"
+			],
+			"color": "black",
+			"season": ["spring", "summer"],
+			"careInstructions": "Spot clean with damp cloth. Air dry.",
+			"occasion": "Suitable for casual wear, errands, walking, and everyday activities.",
+			"comingSoon": false,
+			"styleDetail": {
+				"style": ["casual", "everyday", "athleisure"],
+				"feature": ["breathable lining", "padded insole"],
+				"width": ["regular"],
+				"closureType": ["lace-up"],
+				"heelHeight": null,
+				"soleHeight": 0.5,
+				"pattern": "solid",
+				"heelType": null,
+				"externalMaterial": ["55% polyurethane", "23% cotton", "22% polyester"],
+				"liningMaterial": ["mesh", "60% cotton", "40% polyester"],
+				"soleMaterial": ["rubber"]
+			},
+
+			"brandInfo": {
+				"brand": "Acme Footwear",
+				"countryOfOrigin": "China",
+				"about": "Acme Footwear delivers stylish and comfortable shoes for the modern individual."
+			},
+
+			"availability": {
+				"inStock": true,
+				"quantity": 50
+			},
+
+			"availableOptions": {
+				"size": ["6", "6.5", "7", "7.5", "8", "8.5", "9", "9.5", "10"],
+				"color": "white",
+				"primaryImage": "./images/laceupCasualSneakers_whitePrimary.jpeg",
+				"secondaryImage": [
+					"./images/laceupCasualSneakers_whiteAlt1.jpeg",
+					"./images/laceupCasualSneakers_whiteAlt2.jpeg",
+					"./images/laceupCasualSneakers_whiteAlt3.jpeg"
+				]
+			}
+		}
+	]
+}
