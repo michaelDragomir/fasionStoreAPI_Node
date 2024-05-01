@@ -647,10 +647,6 @@ const RESULTS = [
 				],
 				shoes: [
 					{
-						color: 'beige',
-						hexColor: '#F5F5DC',
-					},
-					{
 						color: 'black',
 						hexColor: '#000',
 					},

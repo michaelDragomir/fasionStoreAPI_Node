@@ -64,7 +64,7 @@
 			},
 			"availableOptions": {
 				"size": ["5", "6", "6.5", "7.5", "8", "9"],
-				"color": null,
+				"color": "black",
 				"primaryImage": null,
 				"secondaryImage": null
 			}
@@ -122,7 +122,7 @@
 
 			"availableOptions": {
 				"size": ["6", "6.5", "7", "7.5", "8", "8.5", "9", "9.5", "10"],
-				"color": "white",
+				"color": ["white", "black"],
 				"primaryImage": "./images/laceupCasualSneakers_whitePrimary.jpeg",
 				"secondaryImage": [
 					"./images/laceupCasualSneakers_whiteAlt1.jpeg",
