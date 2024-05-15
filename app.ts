@@ -5,10 +5,10 @@ import bodyParser from 'body-parser';
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, 'client', 'build')));
+app.use(express.static(path.join(__dirname, 'build')));
 
 app.get('/*', function (req: Request, res: Response) {
-	res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+	res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 app.use((req: Request, res: Response, next: NextFunction) => {

@@ -8,9 +8,9 @@ const path_1 = __importDefault(require("path"));
 const morgan_1 = __importDefault(require("morgan"));
 const body_parser_1 = __importDefault(require("body-parser"));
 const app = (0, express_1.default)();
-app.use(express_1.default.static(path_1.default.join(__dirname, 'client', 'build')));
+app.use(express_1.default.static(path_1.default.join(__dirname, 'build')));
 app.get('/*', function (req, res) {
-    res.sendFile(path_1.default.join(__dirname, 'client', 'build', 'index.html'));
+    res.sendFile(path_1.default.join(__dirname, 'build', 'index.html'));
 });
 app.use((req, res, next) => {
     res.status(200).json({ message: 'working' });
